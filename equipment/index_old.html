@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Lighting, grip, power and control for your next production. Plan an equipment package with Led by Light in Pittsburgh.">
+  <meta name="theme-color" content="#141817">
+  <title>Equipment | Led by Light</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css?v=equipment1">
+  <script src="/script.js" defer></script>
+  <style>
+    .equipment-page{background:var(--charcoal);color:var(--ivory)}
+    .equipment-page .header{position:relative;z-index:10}
+    .equipment-page nav [aria-current="page"]{text-decoration:underline;text-decoration-color:var(--amber);text-decoration-thickness:2px;text-underline-offset:9px}
+    .equipment-intro{border-top:1px solid #f4efe51c;padding-block:36px 42px}
+    .equipment-eyebrow{margin:0 0 16px;color:var(--amber);font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+    .equipment-intro h1{font-family:Geometric,Arial,sans-serif;font-size:clamp(36px,4.5vw,62px);line-height:1.06;letter-spacing:-1.5px;margin:0;max-width:900px}
+    .equipment-lead{max-width:640px;font-size:19px;line-height:1.5;margin:20px 0 0;color:#d2d3ca}
+    .equipment-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;padding-bottom:44px}
+    .equipment-group{border-radius:18px;padding:28px 30px;min-width:0}
+    .equipment-group.lighting{background:var(--amber);color:var(--text)}
+    .equipment-group.grip{background:var(--teal);color:var(--ivory)}
+    .equipment-group.power{background:var(--rust);color:var(--ivory)}
+    .equipment-group.data{background:var(--moss);color:var(--ivory)}
+    .equipment-group .group-top{display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-bottom:1px solid currentColor;padding-bottom:18px;margin-bottom:18px}
+    .equipment-group h2{font-family:Geometric,Arial,sans-serif;font-size:30px;line-height:1.1;letter-spacing:-.7px;margin:0}
+    .group-number{font-size:12px;letter-spacing:1px;opacity:.7}
+    .equipment-group p{font-size:16px;line-height:1.5;margin:0 0 20px;max-width:450px}
+    .equipment-group ul{list-style:none;margin:0;padding:0}
+    .equipment-group li{padding:10px 0;border-top:1px solid #f4efe52b;font-size:16px;line-height:1.35}
+    .equipment-group.lighting li{border-color:#14181725}
+    .equipment-group li:first-child{border-top:0;padding-top:0}
+    .package-request{border-top:1px solid var(--line);padding-block:38px 44px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+    .package-request h2{font-family:Geometric,Arial,sans-serif;font-size:clamp(30px,3.4vw,44px);line-height:1.1;letter-spacing:-1px;margin:0 0 16px}
+    .package-request p{font-size:17px;line-height:1.5;max-width:470px;margin:0 0 22px;color:#d2d3ca}
+    .request-details{border-left:2px solid var(--amber);padding-left:26px}
+    .request-details h3{font-size:17px;margin:0 0 14px}
+    .request-details ol{padding-left:20px;margin:0;color:#d2d3ca;font-size:16px;line-height:1.5}
+    .request-details li{padding-left:5px;margin-bottom:10px}
+    .request-details .availability{font-size:13px;margin:18px 0 0;line-height:1.5;color:#aeb5aa}
+    .equipment-page .footer-bottom{border-top:0}
+    @media(max-width:760px){
+      .equipment-page .header .brand{font-size:26px}
+      .equipment-intro{padding-block:26px 32px}
+      .equipment-intro h1{font-size:clamp(34px,8vw,46px);letter-spacing:-1px}
+      .equipment-lead{font-size:17px}
+      .equipment-grid{gap:16px;padding-bottom:30px}
+      .equipment-group{padding:23px 22px}
+      .equipment-group h2{font-size:26px}
+      .equipment-group p,.equipment-group li{font-size:15px}
+      .package-request{gap:28px;padding-block:30px 34px}
+    }
+    @media(max-width:600px){
+      .equipment-grid,.package-request{grid-template-columns:1fr}
+      .equipment-group .group-top{padding-bottom:14px;margin-bottom:14px}
+      .request-details{padding-left:20px}
+    }
+
+    .truck-rate{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:26px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:32px}
+    .truck-rate .equipment-eyebrow{margin-bottom:9px}
+    .truck-rate h2{font-size:23px;line-height:1.25;margin:0;letter-spacing:-.4px}
+    .day-rate{font-size:34px;font-weight:700;color:var(--amber);white-space:nowrap;margin:0}
+    .day-rate span{font-size:16px;font-weight:400;color:var(--ivory)}
+    .inventory-heading{display:flex;justify-content:space-between;gap:20px;align-items:baseline;margin-bottom:18px}
+    .inventory-heading h2{font-size:23px;margin:0}
+    .inventory-heading p{font-size:14px;color:#bfc6ba;margin:0}
+    .inventory-grid{align-items:start;gap:16px}
+    .inventory-group{border-radius:14px;overflow:hidden;min-width:0}
+    .inventory-group summary{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 26px;cursor:pointer;font-weight:700;font-size:23px;line-height:1.2;list-style:none}
+    .inventory-group summary::-webkit-details-marker{display:none}
+    .inventory-toggle::after{content:'+';font-size:26px;font-weight:400}
+    .inventory-group[open] .inventory-toggle::after{content:'−'}
+    .inventory-group summary:focus-visible{outline:3px solid currentColor;outline-offset:-6px;border-radius:14px}
+    .inventory-items{padding:0 26px 24px;font-size:16px;line-height:1.5;overflow-wrap:anywhere}
+    .inventory-items>p{margin:0;padding:10px 0;border-top:1px solid #f4efe533}
+    .inventory-items ul{padding-left:23px;margin:0 0 16px}
+    .inventory-items li{margin:4px 0}
+    .inventory-items li p{margin:0}
+    @media(max-width:760px){.truck-rate h2{font-size:20px}.day-rate{font-size:29px}.inventory-heading{display:block}.inventory-heading p{margin-top:8px}.inventory-group summary{padding:19px 20px;font-size:21px}.inventory-items{padding:0 20px 20px;font-size:15px}}
+    @media(max-width:600px){.truck-rate{align-items:flex-start;flex-direction:column;gap:16px}.inventory-grid{grid-template-columns:1fr}}
+
+    /* Independent stacks; mobile retains the original category order. */
+    .inventory-column{display:flex;flex-direction:column;gap:16px;min-width:0}
+    .inventory-group{position:relative;isolation:isolate;color:var(--ivory)}
+    .inventory-group.teal{background-color:var(--teal)}
+    .inventory-group.rust{background-color:var(--rust)}
+    .inventory-group.moss{background-color:var(--moss)}
+    .inventory-group::before{
+      content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+      opacity:.055;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23grain)' d='M0 0h180v180H0z'/%3E%3C/svg%3E");
+    }
+    .inventory-group>summary,.inventory-group>.inventory-items{position:relative;z-index:1}
+  </style>
+</head>
+<body class="equipment-page">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="header wrap">
+    <a class="brand" href="/" aria-label="Led by Light home">LED BY LIGHT <span class="brand-tag">PITTSBURGH GRIP &amp; LIGHTING</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="navigation" aria-label="Main navigation">
+      <a href="/#services">Services</a><a href="/equipment" aria-current="page">Equipment</a><a href="/work">Work</a><a href="/about">About</a><a class="button small" href="/contact">Get a quote</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="equipment-intro wrap" aria-labelledby="equipment-title">
+      <p class="equipment-eyebrow">Equipment</p>
+      <h1 id="equipment-title">The right gear.<br>Ready for your next shoot.</h1>
+      <p class="equipment-lead">Explore the truck package, from lighting and grip to power and camera support. Browse the list below, or get in touch about a specific setup.</p>
+    </section>
+    <section class="truck-rate wrap" aria-label="Truck package">
+      <div><p class="equipment-eyebrow">Truck package</p><h2>2022 Isuzu NRR · 16 ft with liftgate</h2></div>
+      <p class="day-rate">$1,500<span> / day</span></p>
+    </section>
+    <div class="inventory-heading wrap"><h2>What’s on the truck</h2><p>Open a category to see the equipment and quantities.</p></div>
+    <section class="equipment-grid inventory-grid wrap" aria-label="Equipment inventory">
+<details class="inventory-group teal"><summary><span>RGB Lights</span><span class="inventory-toggle" aria-hidden="true"></span></summary><div class="inventory-items"><p>(1) Arri Skypanel S60 (Chimera w/ Grid, 50º Honeycrate)</p><p>(1) Arri Skypanel S30</p><p>(1) Nanlux Dyno 1200C</p><p>(2) Creamsource Vortex 8</p><p>(2) Creamsource Vortex 4</p><p>(2) Lite Panels Gemini 2x1 (Chimera, Snapgrid)</p><p>(2) Litemat Spectrum 2L (Snapgrid)</p><p>(8) Astera Titan Tubes (Snapgrid, Honeycrate)</p><p>(8) Astera Helios Tubes (Snapgrid, Honeycrate)</p><p>(16) Astera NYX Bulbs</p><p>(8) Astera Luna Bulbs</p><p>(1) Digital Sputnik DS3 Modular Kit</p><p>(2) Kino Flo Freestyle 31</p><p>(1) Hive Wasp 100-C</p><p>(1) Nanlux 60C (Leko Attachment, Lantern, Softbox)</p><p>(1) Nanlite Forza 60C (Lantern, Softbox,Projector)</p><p>(2) Nanlite Pavo Tube 6C</p><p>(2) Aputure Storm 80C (Softbox, Lantern)</p><p>(4) Aputure MC </p><p>(8) Aputure MC Pro </p><p>(8) Aputure Infinibars</p><p>(2) Aputure MC Pro 1’ Tube (Snapgrid)</p></div></details>
+<details class="inventory-group rust"><summary><span>LED Lights</span><span class="inventory-toggle" aria-hidden="true"></span></summary><div class="inventory-items"><p>(1) Nanlux 2400B</p><p>(1) Mole 10K Daylight</p><p>(1) Aputure 1200x (Fresnel)</p><p>(1) Aputure 1200d (Spotlight Max 36º)</p><p>(2) Aputure 600d (F10 Fresnel, BarnDoors, 5’ Octobox w/ grid, 3’ Lantern)</p><p>(1) Aputure 300x (Spotlight 36º, Fresnel 2X, Barndoors)</p><p>(2) Aputure Storm 400X</p><p>(2) LiteTile+ 4'x4' Kit</p><p>(1) Litemat 8 Plus</p><p>(4) Litemat 4 Plus (Snapgrid)</p><p>(3) Litemat 4 S2</p><p>(1) Litemat 2 S2 (Snapgrid)</p><p>(3) Astra 6X Bi-Color (Softbox, Snapgrid)</p><p>(2) Astra 4X Bi-Color (Softbox, Snapgrid)</p><p>(1) Astra 4X Daylight (Softbox, Snapgrid)</p><p>(2) Aputure 60x</p><p>(2) Dracast Silkray 400B</p><p>(1) Draycast Calmux</p><p>(1) Alladin Eye-Light</p></div></details>
+<details class="inventory-group moss"><summary><span>HMI Lights</span><span class="inventory-toggle" aria-hidden="true"></span></summary><div class="inventory-items"><p>(1) Arri M18</p><p>(1) Joker2 800</p></div></details>
+<details class="inventory-group teal"><summary><span>Tungsten Lights</span><span class="inventory-toggle" aria-hidden="true"></span></summary><div class="inventory-items"><p>(2) Arri T1 1000w</p><p>(1) Arri Open face 750w</p><p>(2) Arri 650w</p><p>(2) ETC Source Four Leko 36°&nbsp;750w</p><p>(3) Arri 300w</p><p>(1) Arri 150w</p></div></details>
+<details class="inventory-group rust"><summary><span>Stands</span><span class="inventory-toggle" aria-hidden="true"></span></summary><div class="inventory-items"><p>(4) Three Riser Combo</p><p>(3) Two Riser Combo</p><p>(2) Mini Mombo Combo</p><p>(2) Mombo Combo</p><p>(1) Minivator Crank Stand</p><p>(2) Low Boy Combo</p><p>(5) Triple Riser Baby</p><p>(2) Two Riser Baby</p><p>(2) Overhead Stand 19'</p><p>(5) Lightweight Kit Stand</p><p>(2) Preemie</p><p>(2) Rolling Baby</p><p>(14) C Stand</p></div></details>
+<details class="inventory-group moss"><summary><span>Flags</span><span class="inventory-toggle" aria-hidden="true"></span></summary><div class="inventory-items"><p>(8) Floppy</p><p>(8) 4x4 Frame</p><ul><li><p>216</p></li><li><p>250</p></li><li><p>251</p></li><li><p>Opal</p></li><li><p>Bleached Muslin Slip on</p></li><li><p>Unbleached Muslin Slip on</p></li><li><p>Eggcrate</p></li></ul><p>(6) 2x3 Solid</p><p>(3) 2x3 Double</p><p>(3) 2x3 Single</p><p>(1) 2x3 Silk</p><p>(2) 18"x24" Solid</p><p>(1) 18"x24" Double</p><p>(1) 18"x24" Single</p><p>(1) 18"x24" Silk</p></div></details>
+<details class="inventory-group teal"><summary><span>Electric</span><span class="inventory-toggle" aria-hidden="true"></span></summary><div class="inventory-items"><p>(6) 50ft Stinger</p><p>(18) 25ft Stinger</p><p>(2) Dimmer 1000w</p><p>(2) Dimmer 600w</p><p>(2) Socket Dimmer</p><p>(2) Quad Box</p><p>(8) Cube Tap</p><p>(5) Ground Adapter</p><p>(2) Uncle Fester</p><p>(2) Pig Nose</p><p>(1) Black Zip Cord</p><p>(1) Honda Generator 3000w</p></div></details>
+<details class="inventory-group rust"><summary><span>Grip</span><span class="inventory-toggle" aria-hidden="true"></span></summary><div class="inventory-items"><p>(1) Fotodiox 48x72" 5-in-1 Reflector</p><p>(3) Quacker Clamp</p><p>(2) Cardellini Clamp - End Jaw 2"</p><p>(2) Cardellini Clamp - End Jaw 6"</p><p>(2) Cardellini Clamp - Center Jaw 3”&nbsp;</p><p>(2) Baby Grid Clamp</p><p>(2) Junior Grid Clamp Receiver&nbsp;</p><p>(2) Junior Grid Clamp</p><p>(2) Baby Pipe Clamp</p><p>(4) Junior Grip head 4" (Lolli-pop)</p><p>(2) C-Clamp w/ Baby Pins - 6"</p><p>(2) Baby Sitt’r</p><p>(2) Junior to Baby Adapter</p><p>(4) Mafer Clamp</p><p>(2) Python Clamp w/ Baby Pin</p><p>(2) Python Clamp w/ Grip Joint</p><p>(6) Pigeon Plate</p><p>(6) 35lb Sand Bag</p><p>(16) 20lb Sand Bag</p><p>(1) 18in Offset Arm</p><p>(1) Baby Double Header</p><p>(2) Scissor Clamp</p><p>(2) Nesting Apple Box Set</p><p>(2) Apple Box Set</p><p>(1) 4ft Ladder</p><p>(1) 8ft Ladder</p><p>(2) Sound Blanket</p><p>(2) 4x4' Bead Board</p><p>(2) 2x4' Bead Board&nbsp;</p><p>(2) 1x1 mirror</p><p>(1) American Menace Arm Kit</p><p>(2) Speed Rail Ear</p><p>(2) Speed Rail 12'</p><p>(2) Speed Rail 8'</p><p>(2) Speed Rail 5'</p><p>(2) Speed Rail 6’</p><p>&nbsp; &nbsp; &nbsp; &nbsp;Safety Chains</p><p>&nbsp; &nbsp; &nbsp; &nbsp;A Clamp (1, 2, 3)&nbsp;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;C47s</p></div></details>
+<details class="inventory-group moss"><summary><span>Frames & Rags</span><span class="inventory-toggle" aria-hidden="true"></span></summary><div class="inventory-items"><p>(1) 12x12 Frame</p><ul><li><p>Silent Full Grid</p></li><li><p>Silent Light Grid</p></li><li><p>Silent Quarter Grid</p></li><li><p>(2) Solid</p></li><li><p>Net (Single, Double)</p></li><li><p>Ultrabounce</p></li></ul><p>(1) 8x8 Frame</p><ul><li><p>Silent Full Grid</p></li><li><p>Silent Light Grid</p></li><li><p>Silent Quarter Grid</p></li><li><p>Ultrabounce</p></li><li><p>Green Screen</p></li><li><p>Solid</p></li></ul><p>&nbsp;(1) 6x6 Frame</p><ul><li><p>Silent Full Grid</p></li><li><p>Silent Light Grid</p></li><li><p>Silent Quarter Grid</p></li><li><p>Ultrabounce</p></li><li><p>Bleached Muslin</p></li><li><p>Silk</p></li><li><p>Solid</p></li><li><p>Net (Single, Double)</p></li><li><p>Egg Crate 50°</p></li></ul></div></details>
+<details class="inventory-group teal"><summary><span>Carts</span><span class="inventory-toggle" aria-hidden="true"></span></summary><div class="inventory-items"><p>Back Stage Super Duz-All Mini Cart</p><p>Back Stage EZ Load Grip/Electric Cart</p><p>Back Stage 4x4 Mini Cart</p><p>Back Stage Head Mini Cart</p><p>BackStage Kino Cart</p></div></details>
+<details class="inventory-group rust"><summary><span>Camera Support</span><span class="inventory-toggle" aria-hidden="true"></span></summary><div class="inventory-items"><p>J.L Fisher Model 10 Dolly</p><ul><li><p>(1) 4 Way Heavy Duty Level Head</p></li><li><p>(1) 4 Way Low Level Head</p></li><li><p>(1) Small Seat</p></li><li><p>(1) Large Seat</p></li><li><p>(2) Push Post</p></li><li><p>(2) Carry Handle</p></li><li><p>(2) Front Pins</p></li><li><p>(1) Knee Bumper</p></li><li><p>(2) Low Side Board</p></li><li><p>(2) Front Boards</p></li><li><p>(2) High Side Board</p></li><li><p>(1) Battery Box</p></li><li><p>(1) Beam Step Standing Platform</p></li><li><p>(2) Diving boards</p></li><li><p>(1) Front Board Bridge</p></li><li><p>(1) Camera Riser 6”</p></li><li><p>(1) Camera Riser 12”</p></li><li><p>(1) 90° Camera Angle Plate</p></li><li><p>(1) Camera Offset 10”</p></li><li><p>(1) Camera Offset 24”</p></li><li><p>(1) Rotating Offset</p></li><li><p>(1) Seat Offset High</p></li><li><p>(1) Seat Offset Straight</p></li><li><p>(1) Seat Riser Adjustable</p></li><li><p>(1) Soft Compound Wheel Set</p><p></p></li></ul></div></details>
+    </section>
+    <section class="package-request wrap" aria-labelledby="package-request-title">
+      <div>
+        <p class="equipment-eyebrow">Build your package</p>
+        <h2 id="package-request-title">A few pieces.<br>Or the truck package.</h2>
+        <p>Send your gear list, or tell us what you’re shooting. We’ll work through the equipment and on-set support with you.</p>
+        <a class="button" href="/contact">Ask about a package <span aria-hidden="true">&nbsp;→</span></a>
+      </div>
+      <div class="request-details">
+        <h3>Tell us a little about the shoot.</h3>
+        <ol><li>Your shoot dates and location</li><li>The equipment or lighting setup you have in mind</li><li>Whether you need equipment only or crew support</li></ol>
+        <p class="availability">Price does not include labor, mileage, or expendables. A minimum of one crew member must accompany the truck. Additional lighting and grip equipment available—contact us with specific requests and to confirm availability.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="footer wrap"><div class="footer-bottom"><a class="brand" href="/">LED BY LIGHT</a><p>PITTSBURGH GRIP &amp; LIGHTING</p></div></footer>
+<script>
+(() => {
+  const grid = document.querySelector('.inventory-grid');
+  const cards = Array.from(grid.children);
+  const desktop = window.matchMedia('(min-width:601px)');
+  function arrangeColumns() {
+    if (desktop.matches) {
+      const columns = [document.createElement('div'), document.createElement('div')];
+      columns.forEach(column => column.className = 'inventory-column');
+      cards.forEach((card, index) => columns[index % 2].append(card));
+      grid.replaceChildren(...columns);
+    } else {
+      grid.replaceChildren(...cards);
+    }
+  }
+  desktop.addEventListener('change', arrangeColumns);
+  arrangeColumns();
+})();
+</script>
+</body>
+</html>

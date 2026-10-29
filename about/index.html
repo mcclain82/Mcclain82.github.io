@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Led by Light provides lighting and grip equipment, experienced crew, and practical on-set support for productions in the Pittsburgh area.">
+  <meta name="theme-color" content="#141817">
+  <title>About Us | Led by Light</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css?v=about1">
+  <script src="/script.js" defer></script>
+  <style>
+    .about-page{background:var(--charcoal);color:var(--ivory)}
+    .about-page .header{position:relative;z-index:10}
+    .about-page nav [aria-current="page"]{text-decoration:underline;text-decoration-color:var(--amber);text-decoration-thickness:2px;text-underline-offset:9px}
+    .about-intro{border-top:1px solid #f4efe51c;padding-block:36px 42px}
+    .about-kicker{margin:0 0 16px;color:var(--amber);font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+    .about-intro h1{font-family:Geometric,Arial,sans-serif;font-size:clamp(36px,4.5vw,62px);line-height:1.06;letter-spacing:-1.5px;margin:0;max-width:900px}
+    .about-lead{max-width:730px;font-size:19px;line-height:1.5;margin:20px 0 0;color:#d2d3ca}
+    .about-values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding-bottom:32px}
+    .about-card,.crew-panel{position:relative;isolation:isolate;overflow:hidden;border-radius:16px}
+    .about-card{padding:28px 26px}
+    .about-card.teal{background:var(--teal)}
+    .about-card.rust{background:var(--rust)}
+    .about-card.moss{background:var(--moss)}
+    .about-card::before,.crew-panel::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23grain)' d='M0 0h180v180H0z'/%3E%3C/svg%3E")}
+    .about-card>*,.crew-panel>*{position:relative;z-index:1}
+    .value-number{display:block;font-size:12px;letter-spacing:1px;opacity:.7;margin-bottom:22px}
+    .about-card h2{font-family:Geometric,Arial,sans-serif;font-size:28px;line-height:1.1;letter-spacing:-.6px;margin:0 0 18px;padding-bottom:18px;border-bottom:1px solid #f4efe540}
+    .about-card p{font-size:16px;line-height:1.55;margin:0}
+    .crew-panel{background:var(--teal);display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;padding:36px;margin-bottom:36px}
+    .crew-panel h2{font-family:Geometric,Arial,sans-serif;font-size:clamp(30px,3.4vw,44px);line-height:1.08;letter-spacing:-1px;margin:0 0 18px}
+    .crew-panel p:not(.about-kicker){font-size:17px;line-height:1.55;margin:0;max-width:500px}
+    .crew-support{list-style:none;margin:0;padding:0;align-self:center}
+    .crew-support li{padding:16px 0;border-top:1px solid #f4efe530}
+    .crew-support li:first-child{padding-top:0;border-top:0}
+    .crew-support li:last-child{padding-bottom:0}
+    .crew-support strong{display:block;font-size:17px;margin-bottom:5px}
+    .crew-support span{display:block;font-size:15px;line-height:1.5;color:#d2dcd5}
+    .about-next{border-top:1px solid var(--line);padding-block:34px 42px;display:flex;align-items:center;justify-content:space-between;gap:36px}
+    .about-next h2{font-family:Geometric,Arial,sans-serif;font-size:clamp(28px,3vw,38px);line-height:1.1;letter-spacing:-.8px;margin:0 0 12px}
+    .about-next p{font-size:17px;line-height:1.5;margin:0;color:#d2d3ca;max-width:570px}
+    .about-actions{display:flex;flex-direction:column;align-items:flex-start;gap:14px;flex-shrink:0}
+    .about-equipment-link{font-size:14px;text-decoration:underline;text-underline-offset:4px}
+    .about-equipment-link:hover{color:var(--amber)}
+    .about-page .footer-bottom{border-top:0}
+    @media(max-width:1000px){.about-values{gap:14px}.about-card{padding:24px 22px}.about-card h2{font-size:25px}.crew-panel{gap:30px;padding:30px}}
+    @media(max-width:760px){
+      .about-page .header .brand{font-size:26px}
+      .about-intro{padding-block:26px 32px}
+      .about-intro h1{font-size:clamp(34px,8vw,46px);letter-spacing:-1px}
+      .about-lead{font-size:17px}
+      .about-values{grid-template-columns:1fr;gap:16px;padding-bottom:24px}
+      .value-number{margin-bottom:14px}
+      .about-card h2{font-size:27px;margin-bottom:14px;padding-bottom:14px}
+      .crew-panel{grid-template-columns:1fr;padding:26px 22px;gap:28px;margin-bottom:28px}
+      .crew-panel p:not(.about-kicker){font-size:16px}
+      .about-next{flex-direction:column;align-items:flex-start;gap:24px;padding-block:28px 34px}
+    }
+  </style>
+<link rel="stylesheet" href="/bottom-sections.css?v=1">
+</head>
+<body class="about-page">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="header wrap">
+    <a class="brand" href="/" aria-label="Led by Light home">LED BY LIGHT <span class="brand-tag">PITTSBURGH GRIP &amp; LIGHTING</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="navigation" aria-label="Main navigation"><a href="/#services">Services</a><a href="/equipment">Equipment</a><a href="/work">Work</a><a href="/about" aria-current="page">About</a><a class="button small" href="/contact">Get a quote</a></nav>
+  </header>
+  <main id="main">
+    <section class="about-intro wrap" aria-labelledby="about-title">
+      <p class="about-kicker">About us</p>
+      <h1 id="about-title">Good lighting.<br>Good people behind it.</h1>
+      <p class="about-lead">Led by Light is a lighting and grip company serving the Pittsburgh area. We bring together a comprehensive equipment package and experienced crew to help you get the look you want, with practical support from setup to wrap.</p>
+    </section>
+    <section class="about-values wrap" aria-label="How we support your production">
+      <article class="about-card teal"><span class="value-number" aria-hidden="true">01</span><h2>Cost effective.</h2><p>Production costs add up quickly. We help you get the equipment you need at an affordable cost, so more of your budget can go toward what ends up on screen. A great look starts with the right tools and a thoughtful plan.</p></article>
+      <article class="about-card rust"><span class="value-number" aria-hidden="true">02</span><h2>Convenient.</h2><p>Less time digging through gear. More time getting the shot. Our truck is equipped with carts and a liftgate for efficient loading and unloading, with an organized layout that keeps equipment accessible throughout the day.</p></article>
+      <article class="about-card moss"><span class="value-number" aria-hidden="true">03</span><h2>Complete.</h2><p>Modern LED lighting meets proven industry staples. Lights, stands, frames, fabrics, and flags come together in one package, giving you options to shape the light and adapt as the needs of your production change.</p></article>
+    </section>
+    <section class="crew-panel wrap" aria-labelledby="crew-title">
+      <div><p class="about-kicker">Experienced crew</p><h2 id="crew-title">The gear is only<br>part of the picture.</h2><p>Our experienced lighting and grip crew brings hands-on knowledge, clear communication, and a practical approach to your set. We work with your production team to translate the creative brief into a lighting setup that fits the location, schedule, and budget.</p></div>
+      <ul class="crew-support">
+        <li><strong>Thoughtful preparation</strong><span>Work through the equipment, power, and setup needs before the shoot.</span></li>
+        <li><strong>Hands-on support</strong><span>Gaffer services, grip, rigging, and lighting control to help bring the look together.</span></li>
+        <li><strong>Ready to adapt</strong><span>Keep the setup moving as shots, locations, and priorities change throughout the day.</span></li>
+      </ul>
+    </section>
+    <section class="about-next wrap site-bottom" aria-labelledby="about-next-title">
+      <div><h2 id="about-next-title">Tell us what you’re planning.</h2><p>Share your dates, location, and ideas. We’ll help you work out the equipment and crew support for your next production.</p></div>
+      <div class="about-actions"><a class="button" href="/contact">Let’s talk <span aria-hidden="true">&nbsp;→</span></a><a class="about-equipment-link" href="/equipment">Explore the equipment package</a></div>
+    </section>
+  </main>
+  <footer class="footer wrap"><div class="footer-bottom"><a class="brand" href="/">LED BY LIGHT</a><p>PITTSBURGH GRIP &amp; LIGHTING</p></div></footer>
+</body>
+</html>

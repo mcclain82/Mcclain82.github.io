@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" fill="none" stroke="#f4efe5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <g transform="translate(52 25)">
+    <!-- Open envelope and emerging letter, drawn as unfilled ivory contours. -->
+    <path d="M55 168 175 54q7-6 14 0l94 70M55 168l13 155q1 7 8 7l265-20q7-1 6-9l-12-156-35-24"/>
+    <path d="m91 188-7-96 215-18 12 109M55 168l119 69q11 7 22-2l139-90M70 324l105-100M341 305l-120-99"/>
+    <path d="m116 123 152-13m-149 40 152-13m-149 40 152-13m-149 40 105-9"/>
+    <!-- Slim pen, slightly angled, with nib and pocket clip. -->
+    <g transform="rotate(14 421 205)">
+      <path d="M410 95q0-7 7-7h10q7 0 7 7v184l-12 40-12-40ZM410 279h24M415 301h14M422 319v6M416 88V77q0-4 4-4h6q4 0 4 4v11M434 104h7v65q0 7-6 7M410 227h24M410 233h24"/>
+    </g>
+  </g>
+</svg>

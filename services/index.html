@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Equipment rentals, lighting and grip crew, rigging, power, and DMX control for productions in Pittsburgh. Explore Led by Light services.">
+  <meta name="theme-color" content="#141817">
+  <title>Services | Led by Light</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css?v=services1">
+  <script src="/script.js" defer></script>
+  <style>
+    .services-page{background:var(--charcoal);color:var(--ivory)}
+    .services-page .header{position:relative;z-index:10}
+    .services-page nav [aria-current="page"]{text-decoration:underline;text-decoration-color:var(--amber);text-decoration-thickness:2px;text-underline-offset:9px}
+    .services-intro{border-top:1px solid #f4efe51c;padding-block:36px 42px}
+    .services-kicker{margin:0 0 16px;color:var(--amber);font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+    .services-intro h1{font-family:Geometric,Arial,sans-serif;font-size:clamp(36px,4.5vw,62px);line-height:1.06;letter-spacing:-1.5px;margin:0;max-width:940px}
+    .services-lead{max-width:690px;font-size:19px;line-height:1.5;margin:20px 0 0;color:#d2d3ca}
+    .service-detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;padding-bottom:38px}
+    .service-detail{display:flex;flex-direction:column;position:relative;isolation:isolate;overflow:hidden;border-radius:16px;padding:30px;scroll-margin-top:24px;min-width:0}
+    .service-detail.teal{background:var(--teal)}
+    .service-detail.rust{background:var(--rust)}
+    .service-detail.moss{background:var(--moss)}
+    .service-detail::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23grain)' d='M0 0h180v180H0z'/%3E%3C/svg%3E")}
+    .service-detail>*{position:relative;z-index:1}
+    .service-number{font-size:12px;letter-spacing:1px;opacity:.7;display:block;margin-bottom:18px}
+    .service-detail h2{font-family:Geometric,Arial,sans-serif;font-size:clamp(27px,2.8vw,36px);line-height:1.1;letter-spacing:-.8px;margin:0 0 18px}
+    .service-detail p{font-size:17px;line-height:1.55;margin:0 0 24px}
+    .service-detail ul{list-style:none;margin:0 0 24px;padding:0}
+    .service-detail li{font-size:15px;line-height:1.45;padding:12px 0;border-top:1px solid #f4efe530}
+    .service-detail li:last-child{border-bottom:1px solid #f4efe530}
+    .service-detail .service-link{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-top:auto;font-size:15px;font-weight:700;padding-block:4px}
+    .service-link:hover{text-decoration:underline;text-underline-offset:4px}
+    .service-link span{font-size:22px;font-weight:400}
+    .services-next{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start;border-top:1px solid var(--line);padding-block:34px 42px}
+    .services-next h2{font-family:Geometric,Arial,sans-serif;font-size:clamp(29px,3.2vw,42px);line-height:1.1;letter-spacing:-1px;margin:0 0 16px}
+    .services-next p{font-size:17px;line-height:1.5;color:#d2d3ca;max-width:480px;margin:0 0 22px}
+    .planning-note{border-left:2px solid var(--amber);padding-left:26px}
+    .planning-note h3{font-size:17px;margin:0 0 14px}
+    .planning-note ol{padding-left:20px;font-size:16px;line-height:1.5;color:#d2d3ca;margin:0}
+    .planning-note li{padding-left:5px;margin-bottom:12px}
+    .services-page .footer-bottom{border-top:0}
+    @media(max-width:760px){
+      .services-page .header .brand{font-size:26px}
+      .services-intro{padding-block:26px 32px}
+      .services-intro h1{font-size:clamp(34px,8vw,46px);letter-spacing:-1px}
+      .services-lead{font-size:17px}
+      .service-detail-grid{gap:16px;padding-bottom:28px}
+      .service-detail{padding:24px 22px}
+      .service-detail p{font-size:16px}
+      .services-next{gap:30px;padding-block:28px 34px}
+    }
+    @media(max-width:600px){.service-detail-grid,.services-next{grid-template-columns:1fr}.planning-note{padding-left:20px}}
+  </style>
+<link rel="stylesheet" href="/bottom-sections.css?v=1">
+</head>
+<body class="services-page">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="header wrap">
+    <a class="brand" href="/" aria-label="Led by Light home">LED BY LIGHT <span class="brand-tag">PITTSBURGH GRIP &amp; LIGHTING</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="navigation" aria-label="Main navigation"><a href="/services" aria-current="page">Services</a><a href="/equipment">Equipment</a><a href="/work">Work</a><a href="/about">About</a><a class="button small" href="/contact">Get a quote</a></nav>
+  </header>
+  <main id="main">
+    <section class="services-intro wrap" aria-labelledby="services-title">
+      <p class="services-kicker">Our services</p>
+      <h1 id="services-title">The gear. The crew.<br>The know-how.</h1>
+      <p class="services-lead">Lighting and grip support for productions in Pittsburgh and the surrounding area. From choosing the equipment to making the last adjustment on set, we help turn your lighting plan into a working setup.</p>
+    </section>
+    <section class="service-detail-grid wrap" aria-label="Production services">
+      <article class="service-detail teal" id="equipment-rentals">
+        <span class="service-number" aria-hidden="true">01</span><h2>Equipment Rentals</h2>
+        <p>Build a package around your shoot. Our inventory brings together modern LED fixtures, established lighting staples, and the grip equipment needed to shape and support them. Whether you have a detailed gear list or need help choosing a setup, we can work through the options with you.</p>
+        <ul><li>Lighting, stands, flags, frames, and fabrics</li><li>Truck package with organized carts and liftgate access</li><li>Fisher dolly package and optional accessories</li><li>Equipment selection based on your location, look, and budget</li></ul>
+        <a class="service-link" href="/equipment">Explore the equipment <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="service-detail rust" id="lighting-grip-crew">
+        <span class="service-number" aria-hidden="true">02</span><h2>Lighting and Grip Crew</h2>
+        <p>Experienced people make the equipment work for your production. Our lighting and grip crew works with your cinematographer and production team to build the look, manage the setup, and make adjustments as the day moves from shot to shot.</p>
+        <ul><li>Gaffer services and hands-on lighting support</li><li>Grip support for shaping, cutting, and bouncing light</li><li>Equipment preparation, setup, and wrap</li><li>Practical problem-solving as locations and shot requirements change</li></ul>
+        <a class="service-link" href="/contact">Discuss your crew needs <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="service-detail moss" id="rigging-power">
+        <span class="service-number" aria-hidden="true">03</span><h2>Rigging &amp; Power</h2>
+        <p>Get the lights into position and plan how to power them. We help work through mounting, support, cable routes, and distribution around the needs of your location. From stage setups to vehicle work, the approach starts with the shot and the practical demands of the space.</p>
+        <ul><li>Stage and vehicle rigging</li><li>Lighting mounts, stands, and support hardware</li><li>Power distribution setup and cable management</li><li>Planning for access, available power, and equipment placement</li></ul>
+        <a class="service-link" href="/contact">Talk through your setup <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="service-detail teal" id="control-data">
+        <span class="service-number" aria-hidden="true">04</span><h2>Control &amp; Data</h2>
+        <p>Bring your fixtures together with a control system that suits the shoot. We handle DMX setup and programming so lighting changes can be made from the board, whether you need a simple adjustment, a repeatable cue, or coordinated changes across multiple fixtures.</p>
+        <ul><li>Wired DMX and wireless CRMX setup</li><li>Fixture addressing, patching, and data distribution</li><li>Lighting cues, looks, and programming</li><li>Board operation and on-set control support</li></ul>
+        <a class="service-link" href="/contact">Plan your lighting control <span aria-hidden="true">→</span></a>
+      </article>
+    </section>
+    <section class="services-next wrap site-bottom" aria-labelledby="next-title">
+      <div><p class="services-kicker">Let’s plan your shoot</p><h2 id="next-title">Start with the idea.<br>We’ll work through the setup.</h2><p>You don’t need a finished equipment list to get in touch. Tell us what you’re making, and we’ll help you work out the gear and support you need.</p><a class="button" href="/contact">Tell us about your project <span aria-hidden="true">&nbsp;→</span></a></div>
+      <aside class="planning-note" aria-label="Project planning details"><h3>A few details to get started</h3><ol><li>Your shoot dates and location</li><li>The look, scenes, or lighting challenges you have in mind</li><li>Your equipment list, crew needs, and budget, if known</li></ol></aside>
+    </section>
+  </main>
+  <footer class="footer wrap"><div class="footer-bottom"><a class="brand" href="/">LED BY LIGHT</a><p>PITTSBURGH GRIP &amp; LIGHTING</p></div></footer>
+</body>
+</html>

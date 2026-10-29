@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Selected projects supported by Led by Light. Pittsburgh lighting and grip for commercial and film productions.">
+<meta name="theme-color" content="#141817">
+<title>Selected Work | Led by Light</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css?v=20">
+<style>
+/* Shared header, colors, fonts and buttons come from the homepage. */
+.work-page{background:var(--charcoal);color:var(--ivory)}
+.work-page .header{position:relative;z-index:5;background:transparent}
+.work-page nav [aria-current="page"]{text-decoration:underline;text-decoration-color:var(--amber);text-decoration-thickness:2px;text-underline-offset:9px}
+.work-intro{padding-top:40px;padding-bottom:32px}
+.work-intro .eyebrow{margin:0 0 16px;color:var(--amber);font-size:14px;letter-spacing:2px;font-weight:700;text-transform:uppercase}
+.work-intro h1{margin:0;font-family:Geometric,Arial,sans-serif;font-size:clamp(38px,4.8vw,66px);font-weight:700;line-height:1.03;letter-spacing:-1.5px}
+.projects{padding-bottom:34px}
+.video-frame{position:relative;aspect-ratio:16/9;width:100%;background:#080b0a}
+.video-frame iframe{display:block;width:100%;height:100%;border:0}
+.project h2{font-family:Geometric,Arial,sans-serif;font-size:clamp(23px,2.5vw,32px);line-height:1.13;font-weight:700;margin:12px 0 10px;letter-spacing:-.4px}
+.project-heading{display:flex;align-items:baseline;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.youtube-link{font-size:14px;text-decoration:underline;text-underline-offset:4px;color:var(--amber)}
+.youtube-link:hover{color:var(--ivory)}
+.credits{display:flex;flex-wrap:wrap;gap:6px 0;margin:0;font-size:14px;line-height:1.5}
+.credits span+span{border-left:1px solid #f4efe566;margin-left:14px;padding-left:14px}
+.featured{margin-bottom:28px}
+.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 30px}
+.project{min-width:0}
+/* Temporary preview artwork is displayed from the supplied mockup.
+   Replace each whole .placeholder div with a .video-frame when a URL is ready. */
+.placeholder{position:relative;aspect-ratio:470/232;overflow:hidden;background-image:url('assets/layout-reference.jpeg');background-repeat:no-repeat;background-size:217.87234% 662.06897%;background-color:#202521}
+.placeholder.kids{background-position:5.41516% 51.30368%}
+.placeholder.life{background-position:94.58484% 51.30368%}
+.placeholder.lunch{background-position:5.41516% 75.07669%}
+.placeholder.hat{background-position:94.58484% 75.07669%}
+.placeholder span{position:absolute;bottom:0;left:0;right:0;background:#141817e8;color:var(--ivory);padding:8px 12px;font-size:12px;line-height:1.4;text-align:center}
+.work-cta{background:var(--ivory);color:var(--text);overflow:hidden}
+.cta-grid{display:grid;grid-template-columns:1.2fr 1fr .5fr;gap:38px;align-items:center;padding-block:44px;position:relative}
+.work-cta h2{margin:0;font-family:Geometric,Arial,sans-serif;font-size:clamp(32px,3.8vw,52px);line-height:1.05;letter-spacing:-1px}
+.work-cta h2::before{content:'';display:block;width:42px;height:3px;background:var(--amber);margin-bottom:24px}
+.cta-copy p{margin:0 0 20px;font-size:17px;line-height:1.5}
+.cta-copy .button{gap:32px}
+.cta-grid>img{width:100%;height:230px;object-fit:contain;opacity:.35;filter:brightness(0)}
+.work-cta a:focus-visible{outline-color:var(--teal)}
+.work-page .footer,.work-page .footer-bottom{border-top:0}
+@media(max-width:900px){.cta-grid{grid-template-columns:1fr 1fr;gap:30px}.cta-grid>img{display:none}.credits{display:block}.credits span{display:block}.credits span+span{border:0;margin:3px 0 0;padding:0}}
+@media(max-width:760px){.work-intro{padding-top:28px;padding-bottom:26px}.work-intro h1{font-size:40px;letter-spacing:-1px}.project-grid{gap:26px 20px}.project h2{font-size:24px}.credits{font-size:13px}}
+@media(max-width:600px){.project-grid{grid-template-columns:1fr}.cta-grid{grid-template-columns:1fr;gap:22px;padding-block:34px}.work-intro h1{font-size:clamp(30px,8vw,40px)}.project-heading{gap:0;margin-bottom:8px}.youtube-link{margin-bottom:5px}.project h2{font-size:26px}.work-cta h2{font-size:36px}}
+
+/* Keep the logo hero identical to the homepage: inherited without overrides. */
+.work-page .projects{padding-top:38px}
+@media(max-width:760px){.work-page .projects{padding-top:28px}}
+
+</style>
+<script src="../script.js" defer></script>
+<style>
+/* Compact headings for the no-logo comparison pages. */
+body .compact-top{background:var(--charcoal);position:relative;color:var(--ivory)}
+.compact-top .header{position:relative;z-index:10;background:transparent}
+.compact-intro{padding-block:36px 46px;border-top:1px solid #f4efe51c}
+.compact-intro .hero-copy{max-width:960px}
+.compact-intro h1{font-family:Geometric,Arial,sans-serif;font-size:clamp(36px,4.5vw,62px);line-height:1.06;letter-spacing:-1.5px;margin:0;max-width:960px}
+.compact-intro h1::before{content:'';display:block;width:44px;height:3px;background:var(--amber);margin-bottom:22px}
+.compact-intro .intro{font-size:19px;line-height:1.5;margin:18px 0 0;max-width:620px}
+.compact-intro .eyebrow{display:block;margin:0 0 16px;color:var(--amber);font-size:14px;letter-spacing:2px;font-weight:700;text-transform:uppercase}
+.compact-intro .about-eyebrow{display:none}
+.work-page .compact-intro h1::before{display:none}
+.contact-page .inquiry-art{overflow:hidden;display:grid;place-items:center}
+.contact-page .inquiry-art img{width:100%;height:100%;object-fit:contain}
+@media(max-width:760px){.compact-intro{padding-block:26px 32px}.compact-intro h1{font-size:clamp(34px,8vw,46px);letter-spacing:-1px}.compact-intro .intro{font-size:17px}.compact-top .header .brand{font-size:26px}}
+
+</style>
+</head>
+<body class="work-page">
+<a class="skip" href="#main">Skip to content</a>
+<div class="compact-top">
+<header class="header wrap">
+<a class="brand" href="../" aria-label="Led by Light home">LED BY LIGHT <span class="brand-tag">PITTSBURGH GRIP &amp; LIGHTING</span></a>
+<button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">☰</span></button>
+<nav id="navigation" aria-label="Main navigation">
+<a href="../#services">Services</a><a href="../equipment">Equipment</a><a href="./" aria-current="page">Work</a><a href="../about/">About</a><a class="button small" href="../contact/">Get a quote</a>
+</nav>
+</header>
+<section class="compact-intro wrap" aria-labelledby="work-title">
+<div class="hero-copy">
+
+<p class="eyebrow">Selected Work</p>
+<h1 id="work-title">A few projects we’ve helped bring to light.</h1>
+</div>
+</section>
+</div>
+<main id="main">
+<section class="projects wrap" aria-label="Selected projects">
+<article class="project featured" aria-labelledby="featured-title">
+<div class="video-frame">
+<iframe src="https://www.youtube-nocookie.com/embed/1kA_5x7WKAI" title="Sidney Crosby — Is It In You? — YouTube video" width="1280" height="720" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<div class="project-heading"><h2 id="featured-title">Sidney Crosby — Is It In You?</h2><a class="youtube-link" href="https://www.youtube.com/watch?v=1kA_5x7WKAI" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
+<p class="credits"><span>Client: Gatorade</span><span>Production company: Untitled</span></p>
+</article>
+<div class="project-grid">
+<article class="project">
+<div class="placeholder kids" role="img" aria-label="Illustrative placeholder: a child in a sunlit hallway"><span>Video coming soon · Illustrative image</span></div>
+<h2>Our Kids Are Fearless</h2>
+<p class="credits"><span>Client: WVU Medicine Children’s Hospital</span><span>Production company: Fulcrum</span></p>
+</article>
+<article class="project">
+<div class="placeholder life" role="img" aria-label="Illustrative placeholder: a woman overlooking Pittsburgh"><span>Video coming soon · Illustrative image</span></div>
+<h2>Life Changing Is…</h2>
+<p class="credits"><span>Client: UPMC</span><span>Production company: Vinegar Hill</span></p>
+</article>
+<article class="project">
+<div class="placeholder lunch" role="img" aria-label="Illustrative placeholder: sneakers on a basketball court"><span>Video coming soon · Illustrative image</span></div>
+<h2>Free Lunch</h2>
+<p class="credits"><span>Client: Social Status × Nike</span><span>Production company: Dreadhead Films</span></p>
+</article>
+<article class="project">
+<div class="placeholder hat" role="img" aria-label="Illustrative placeholder: a baseball player on a field"><span>Video coming soon · Illustrative image</span></div>
+<h2>The Hat</h2>
+<p class="credits"><span>Client: Pittsburgh Pirates</span><span>Production company: Voyage Visuals</span></p>
+</article>
+</div>
+</section>
+<section class="work-cta" aria-labelledby="cta-title"><div class="wrap cta-grid">
+<h2 id="cta-title">Your next project<br>starts here.</h2>
+<div class="cta-copy"><p>Thoughtful lighting and grip support for bold ideas. Let’s talk about what you’re planning and how we can help bring it to light.</p><a class="button" href="../contact/">Let’s talk <span aria-hidden="true">→</span></a></div>
+<img src="assets/gaffer.svg" alt="" width="320" height="280" loading="lazy">
+</div></section>
+</main>
+<footer class="footer wrap"><div class="footer-bottom"><a class="brand" href="../">LED BY LIGHT</a><p>PITTSBURGH GRIP &amp; LIGHTING</p></div></footer>
+</body></html>

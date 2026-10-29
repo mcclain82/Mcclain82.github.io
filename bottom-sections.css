@@ -1,0 +1,29 @@
+/* Shared warm-white closing section, matching the Work page. */
+.site-bottom.wrap{
+  width:100%;max-width:none;margin-inline:0;
+  padding:44px max(44px,calc((100% - 1280px)/2));
+  background:var(--ivory);color:var(--text);border-top:0;
+}
+.site-bottom h2,.site-bottom h3{color:var(--text)}
+.site-bottom h2::before{
+  content:"";display:block;width:42px;height:3px;
+  background:var(--amber);margin-bottom:24px;
+}
+.site-bottom p,.site-bottom ol,.site-bottom .availability{color:#39423d}
+.site-bottom .equipment-eyebrow,.site-bottom .services-kicker{color:#6b5027}
+.site-bottom .request-details,.site-bottom .planning-note{border-left-color:var(--amber)}
+.site-bottom a:focus-visible{outline-color:var(--teal)}
+.site-bottom .about-equipment-link:hover{color:var(--teal)}
+.contact-next{display:flex;align-items:center;justify-content:space-between;gap:38px}
+.contact-next h2{
+  font-family:Geometric,Arial,sans-serif;font-size:clamp(30px,3.4vw,44px);
+  line-height:1.1;letter-spacing:-1px;margin:0 0 16px;
+}
+.contact-next p{font-size:17px;line-height:1.5;max-width:620px;margin:0}
+.contact-next .button{flex-shrink:0}
+@media(max-width:1050px){.site-bottom.wrap{padding-inline:30px}}
+@media(max-width:760px){
+  .site-bottom.wrap{padding:34px 20px}
+  .contact-next{flex-direction:column;align-items:flex-start;gap:24px}
+  .contact-next h2{font-size:32px}
+}
