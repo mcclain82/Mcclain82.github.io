@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" fill="none" stroke="#f4efe5" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+  <title>Open envelope with letter and pen</title>
+  <g transform="translate(52 25)">
+    <g transform="rotate(-4 200 205)">
+      <!-- Back flap is visible only outside the letter. -->
+      <path d="M60 170 92 140M143 92 190 52Q197 46 204 52L251 92M302 140 334 170"/>
+      <!-- Letter ends precisely at the opening's two diagonal edges. -->
+      <path d="M92 189V92H302V189"/>
+      <path d="M121 121H273M121 149H273M137 177H257"/>
+      <!-- One continuous outer contour and three joined envelope seams. -->
+      <path d="M60 170V316Q60 324 68 324H326Q334 324 334 316V170L208 246Q197 253 186 246Z"/>
+      <path d="M63 321 167 235M331 321 227 235"/>
+    </g>
+    <g transform="rotate(14 421 205)">
+      <path d="M410 95Q410 88 417 88H427Q434 88 434 95V279L422 319 410 279Z"/>
+      <path d="M410 279H434M415 302H429M416 88V77Q416 73 420 73H426Q430 73 430 77V88M434 104H441V169Q441 176 434 176M410 230H434"/>
+    </g>
+  </g>
+</svg>
