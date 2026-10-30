@@ -497,8 +497,10 @@ a:focus-visible,button:focus-visible{outline:3px solid #fff;outline-offset:5px}
 }
 
 
-
-
+.card.gaffer img.illustration {
+  transform: scale(1.15);
+  transform-origin: center;
+}
 
 
 
