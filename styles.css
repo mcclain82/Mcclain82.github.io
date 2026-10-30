@@ -1,0 +1,501 @@
+/* ==========================================================================
+   Led by Light — styles.css
+   Order: fonts · tokens · base · header · hero · services · package · footer
+          · breakpoints (large → small) · reduced motion
+   ========================================================================== */
+
+/* ---------- Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+/* ---------- Tokens ---------- */
+:root{
+  --charcoal:#141817;
+  --ivory:#f4efe5;
+  --amber:#f0ae39;
+  --teal:#073b43;
+  --rust:#a94428;
+  --moss:#435549;
+  --text:#101615;
+  --line:#454b43;
+}
+
+/* ---------- Base ---------- */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{
+  margin:0;
+  background:var(--charcoal);
+  color:var(--ivory);
+  font-family:'Poppins',Arial,sans-serif;
+  font-size:18px;
+  line-height:1.45;
+}
+h1,h2,h3{font-family:'Poppins',Arial,sans-serif;font-weight:800}
+a{color:inherit;text-decoration:none}
+a,button{-webkit-tap-highlight-color:transparent}
+a:focus-visible,button:focus-visible{outline:3px solid #fff;outline-offset:5px}
+.services a:focus-visible{outline-color:var(--teal)}
+
+.wrap{width:min(1280px,calc(100% - 88px));margin-inline:auto}
+
+.skip{position:absolute;top:-80px;left:20px;z-index:20;padding:12px;background:var(--ivory);color:#000}
+.skip:focus{top:15px}
+
+/* ---------- Buttons ---------- */
+.button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:51px;
+  padding:14px 24px;
+  background:var(--amber);
+  color:#111814;
+  font-size:16px;
+  font-weight:700;
+  border:1px solid var(--amber);
+  border-radius:3px;
+  transition:background .15s,transform .15s;
+}
+.button:hover{background:#ffbf51;transform:translateY(-2px)}
+.button.small{min-height:44px;padding:10px 21px;font-size:14px}
+.button.outline{color:var(--ivory);background:rgba(0,0,0,.14);border-color:var(--ivory)}
+.button.outline:hover{background:rgba(255,255,255,.12)}
+
+/* ---------- Hero shell (layered background) ----------
+   Stacking order, bottom to top:
+   linen (0) → haze (1) → logo (2) → left fade (3) → hero (4) → header (5)   */
+.hero-shell{
+  --hero-logo-size:150%;
+  --hero-logo-position:right center;
+  position:relative;
+  isolation:isolate;
+  background:var(--charcoal);
+}
+.hero-linen,
+.hero-haze,
+.hero-shell::before,
+.hero-shell::after{position:absolute;inset:0;pointer-events:none}
+
+.hero-linen{
+  z-index:0;
+  background-color:#202521;
+  background-image:
+    repeating-linear-gradient(0deg,#fff0 0 2px,#d9cfad12 2px 3px,#0002 3px 4px),
+    repeating-linear-gradient(90deg,transparent 0 2px,#c7c1a915 2px 3px,#0002 3px 4px);
+}
+/* Hides the linen beneath the logo with a single alpha mask */
+.hero-linen::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:var(--charcoal);
+  -webkit-mask-image:url('assets/hero-logo.png');
+  mask-image:url('assets/hero-logo.png');
+  -webkit-mask-size:auto var(--hero-logo-size);
+  mask-size:auto var(--hero-logo-size);
+  -webkit-mask-position:var(--hero-logo-position);
+  mask-position:var(--hero-logo-position);
+  -webkit-mask-repeat:no-repeat;
+  mask-repeat:no-repeat;
+}
+.hero-haze{
+  z-index:1;
+  background:
+    radial-gradient(ellipse at 90% 16%,#6b5031cc 0%,transparent 53%),
+    radial-gradient(ellipse at 60% 95%,#18454acc 0%,transparent 55%);
+}
+.hero-shell::before{
+  content:"";
+  z-index:2;
+  background:url('assets/hero-logo.png') no-repeat;
+  background-position:var(--hero-logo-position);
+  background-size:auto var(--hero-logo-size);
+  opacity:.18;
+}
+.hero-shell::after{
+  content:"";
+  z-index:3;
+  background:linear-gradient(90deg,#141817 0%,rgba(20,24,23,.96) 23%,rgba(20,24,23,.65) 44%,rgba(20,24,23,.12) 72%,transparent 100%);
+}
+.hero-shell>.hero{position:relative;z-index:4}
+.hero-shell>.header{position:relative;z-index:5}
+
+/* ---------- Header ---------- */
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+  min-height:116px;
+  padding-top:20px;
+  padding-bottom:16px;
+}
+.brand{
+  font-family:'Poppins',Arial,sans-serif;
+  font-size:29px;
+  font-weight:700;
+  letter-spacing:-1px;
+  line-height:1;
+  white-space:nowrap;
+}
+.header .brand{font-size:clamp(44px,6vw,72px)}
+.brand-tag{
+  display:block;
+  margin-top:.15em;
+  padding-left:.25em;
+  font-family:'Poppins',Arial,sans-serif;
+  font-size:15px;
+  font-weight:400;
+  letter-spacing:.06em;
+}
+.header nav{display:flex;align-items:center;gap:32px;font-size:15px}
+.header nav>a:not(.button):hover{text-decoration:underline;text-underline-offset:7px}
+.menu-toggle{display:none}
+
+/* ---------- Hero ---------- */
+.hero{
+  display:flex;
+  align-items:center;
+  min-height:398.5px;
+  padding-block:46.5px 75px;
+}
+.hero-copy{max-width:630px}
+.hero h1{
+  margin:0 0 10px;
+  font-family:'Poppins',Arial,sans-serif;
+  font-size:72px;
+  font-weight:800;
+  letter-spacing:-2px;
+  line-height:.96;
+}
+.intro{margin:0 0 30px;font-size:21px;line-height:1.4}
+.actions{display:flex;flex-wrap:wrap;gap:18px}
+
+/* ---------- Services ---------- */
+.services{padding:43px 0 38px;background:var(--ivory);color:var(--text)}
+.services .wrap{width:calc(100% - 48px);max-width:1280px}
+.services h2{
+  margin:0 0 28px;
+  font-size:clamp(30px,3.6vw,49px);
+  letter-spacing:-1.8px;
+  line-height:1.1;
+}
+
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.card{
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  padding:15px 14px 14px;
+  border-radius:20px;
+  transition:transform .18s,box-shadow .18s;
+}
+.card:hover{transform:translateY(-4px);box-shadow:0 8px 20px #0002}
+.equipment{background:var(--amber)}
+.gaffer{background:var(--teal);color:var(--ivory)}
+.rigging{background:var(--rust);color:var(--ivory)}
+.control{background:var(--moss);color:var(--ivory)}
+
+.card img.illustration,
+.control-art{width:100%;height:82px;margin:0 auto 12px;flex-shrink:0}
+.card img.illustration{
+  display:block;
+  max-width:100%;
+  object-fit:contain;
+  object-position:center;
+}
+.control-art{display:flex;align-items:center;justify-content:center}
+.control-art svg{display:block;width:96px;height:78px}
+
+.card h3{
+  margin:0 0 8px;
+  min-height:43px;
+  font-size:19px;
+  letter-spacing:-.5px;
+  line-height:1.12;
+}
+.card p{margin:0 0 12px;font-size:15px;line-height:1.3}
+.card-link{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin-top:auto;
+  font-size:14px;
+  line-height:1.25;
+}
+.card-link span{font-size:21px;line-height:1}
+
+/* ---------- Truck package ---------- */
+.package{
+  display:grid;
+  grid-template-columns:minmax(0,40%) minmax(0,60%);
+  align-items:center;
+  gap:0;
+  padding-block:42px 48px;
+}
+.package-copy{min-width:0;padding-right:26px}
+.package h2{
+  margin:0 0 20px;
+  font-size:clamp(32px,3.6vw,49px);
+  letter-spacing:-1.7px;
+  line-height:1.06;
+}
+.package p{max-width:370px;margin:0 0 24px;font-size:20px;line-height:1.4}
+.truck-panel{min-width:0;padding:14px;background:var(--teal);border-radius:20px}
+.truck-panel img{
+  display:block;
+  width:100%;
+  max-width:100%;
+  height:auto;
+  object-fit:contain;
+  object-position:center;
+}
+
+/* ---------- Footer ---------- */
+.footer{border-top:1px solid var(--line)}
+.footer h2{margin:0;font-size:27px;letter-spacing:-.5px}
+.footer-cta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:29px 0;
+}
+.footer-bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:25px 0 30px;
+  border-top:1px solid var(--line);
+}
+.footer-bottom .brand{font-size:16px;letter-spacing:0}
+.footer-bottom p{margin:0;font-size:11px;letter-spacing:2px;color:#b4b8af}
+
+/* ==========================================================================
+   Breakpoints (large → small)
+   ========================================================================== */
+
+@media(min-width:1500px){
+  .hero{min-height:458.5px}
+}
+
+@media(max-width:1050px){
+  .wrap{width:calc(100% - 60px)}
+  .header nav{gap:22px}
+  .hero{min-height:353.5px}
+}
+
+/* Tight four-up card grid */
+@media(min-width:641px) and (max-width:800px){
+  .services .wrap{width:calc(100% - 32px)}
+  .cards{gap:9px}
+  .card{padding:13px 10px}
+  .card h3{min-height:57px;font-size:17px}
+  .card p{font-size:13px}
+  .card-link{font-size:12px}
+}
+
+@media(max-width:760px){
+  .wrap{width:calc(100% - 40px)}
+
+  /* Header + collapsible nav */
+  .header{min-height:96px;padding-top:16px;padding-bottom:12px;gap:12px}
+  .header .brand{font-size:clamp(22px,5.5vw,40px);letter-spacing:-.5px}
+  .header .brand-tag{font-size:clamp(8px,2vw,12px);letter-spacing:.04em}
+  .menu-toggle{flex-shrink:0}
+  .brand-tag{font-size:12px}
+  .menu-toggle{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:8px 12px;
+    background:transparent;
+    color:var(--ivory);
+    font:inherit;
+    font-size:14px;
+    border:1px solid #aaa7;
+    border-radius:3px;
+  }
+  .header nav{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    z-index:10;
+    align-items:stretch;
+    gap:5px;
+    padding:18px;
+    background:#141d1b;
+    border:1px solid #6d7366;
+    box-shadow:0 12px 25px #0005;
+  }
+  .header nav.open{display:flex;flex-direction:column}
+  .header nav>a{padding:11px 12px}
+
+  /* Hero */
+  .hero-shell{--hero-logo-position:center center}
+  /* Compact mobile logo; keep its linen mask aligned. */
+  .hero-shell::before{background-size:86.25% auto}
+  .hero-linen::after{-webkit-mask-size:86.25% auto;mask-size:86.25% auto}
+  .hero-shell::after{background:linear-gradient(90deg,#141817ee,#14181788 65%,#14181733)}
+  .hero{min-height:396px;padding:55.5px 0 60px}
+  .hero h1{font-size:52px;letter-spacing:-1px}
+  .intro{max-width:350px;font-size:18px}
+  .actions{gap:12px}
+  .button{min-height:48px;padding:13px 18px;font-size:14px}
+
+  /* Services */
+  .services{padding-block:32px}
+  .services h2{max-width:480px;font-size:34px;letter-spacing:-1px}
+
+  /* Package stays two-up, scaled down */
+  .package{padding-block:35px}
+  .package-copy{padding-right:18px}
+  .package h2{font-size:clamp(22px,4.5vw,34px);letter-spacing:-.8px}
+  .package p{font-size:clamp(12px,2.4vw,17px)}
+  .package .button{min-height:42px;padding:10px 12px;font-size:12px}
+  .truck-panel{padding:10px}
+
+  /* Footer */
+  .footer h2{font-size:26px}
+  .footer-cta,
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:15px}
+  .footer-cta{gap:20px}
+  .footer-bottom p{font-size:10px;letter-spacing:1.2px}
+}
+
+@media(max-width:640px){
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+@media(max-width:400px){
+  .cards{grid-template-columns:1fr}
+}
+
+/* ---------- Reduced motion ---------- */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}
+
+/* Contact: mirrors the truck section, with artwork on the left. */
+.contact-section{display:grid;grid-template-columns:minmax(0,60%) minmax(0,40%);align-items:center;padding-block:42px 48px}
+.contact-panel{min-width:0;padding:14px;background:var(--rust);border-radius:20px;height:var(--contact-panel-height,auto);aspect-ratio:8/5;display:flex;align-items:center;justify-content:center}
+.contact-panel img{display:block;width:100%;height:100%;min-height:0;object-fit:contain}
+.contact-copy{min-width:0;padding-left:32px}
+.contact-copy h2{margin:0 0 20px;font-size:clamp(32px,3.6vw,49px);letter-spacing:-1.7px;line-height:1.06}
+.contact-copy p{max-width:370px;margin:0 0 24px;font-size:20px;line-height:1.4}
+@media(max-width:760px){
+  .contact-section{padding-block:35px}
+  .contact-panel{padding:10px}
+  .contact-copy{padding-left:18px}
+  .contact-copy h2{font-size:clamp(20px,4.5vw,34px);letter-spacing:-.8px}
+  .contact-copy p{font-size:clamp(12px,2.4vw,17px);margin-bottom:18px}
+  .contact-copy .button{min-height:42px;padding:10px 12px;font-size:12px}
+}
+
+/* Homepage feature sections: compact desktop/tablet layout. */
+@media (min-width:761px){
+  .package:has(> .package-copy > #package-title){
+    width:min(1080px,calc(100% - 88px));
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:36px;
+    padding-block:32px 36px;
+  }
+  .package:has(> .package-copy > #package-title) .package-copy{padding-right:0}
+  .footer > .contact-section:has(#contact-title){
+    width:min(1080px,100%);
+    margin-inline:auto;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:36px;
+    padding-block:32px 36px;
+  }
+  .footer > .contact-section:has(#contact-title) .contact-copy{padding-left:0}
+  .package:has(#package-title) .truck-panel,
+  .footer > .contact-section:has(#contact-title) .contact-panel{
+    width:100%;
+    height:auto;
+    aspect-ratio:8/5;
+    padding:12px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .package:has(#package-title) .truck-panel img,
+  .footer > .contact-section:has(#contact-title) .contact-panel img{
+    width:100%;height:100%;min-height:0;object-fit:contain;
+  }
+  .package #package-title,
+  .footer > .contact-section #contact-title{
+    font-size:clamp(30px,3vw,40px);
+    letter-spacing:-1.2px;
+    line-height:1.08;
+    margin-bottom:16px;
+  }
+  .package:has(#package-title) .package-copy p,
+  .footer > .contact-section:has(#contact-title) .contact-copy p{
+    font-size:18px;line-height:1.4;margin-bottom:20px;
+  }
+  .package:has(#package-title) .button,
+  .footer > .contact-section:has(#contact-title) .button{
+    min-height:46px;padding:12px 20px;font-size:15px;
+  }
+}
+@media (min-width:761px) and (max-width:1050px){
+  .package:has(> .package-copy > #package-title){width:calc(100% - 60px)}
+  .package:has(> .package-copy > #package-title),
+  .footer > .contact-section:has(#contact-title){gap:28px;padding-block:28px 30px}
+}
+
+/* Shared masthead: evenly spaced tagline aligned to the company name. */
+.header .brand{display:grid;grid-template-columns:minmax(0,1fr);width:max-content}
+.header .brand .brand-tag{
+  width:0;min-width:100%;padding-left:0;margin-top:.55em;
+  font-size:.26em;line-height:1.2;font-weight:700;
+  letter-spacing:.38em;word-spacing:.15em;color:var(--amber);
+  text-align:left;text-align-last:auto;white-space:nowrap;
+}
+@media(max-width:760px){
+  .header .brand{font-size:26px;letter-spacing:-.5px}
+}
+
+.header .brand .brand-tag.spaced-tagline{
+  display:flex;justify-content:space-between;gap:0;
+  letter-spacing:0;word-spacing:0;
+}
+.header .brand .brand-tag.spaced-tagline > span{flex:0 0 auto}
+
+@media (max-width: 760px) and (orientation: portrait) {
+  .hero-shell::before {
+    background-size: 108% auto;
+  }
+
+  .hero-linen::after {
+    -webkit-mask-size: 108% auto;
+    mask-size: 108% auto;
+  }
+}
+
+@media (max-width: 760px) and (orientation: portrait) {
+  .hero-shell {
+    --hero-logo-position: calc(50% + 25px) center;
+  }
+
+  .hero-shell::after {
+    background: linear-gradient(
+      90deg,
+      rgba(20, 24, 23, 0.65),
+      rgba(20, 24, 23, 0.32) 65%,
+      rgba(20, 24, 23, 0.10)
+    );
+  }
+}
+
+.card.gaffer img.illustration {
+  transform: scale(1.15);
+  transform-origin: center;
+}
