@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Lighting, grip, power and control for your next production. Plan an equipment package with Led by Light in Pittsburgh.">
+  <meta name="theme-color" content="#141817">
+  <title>Equipment | Led by Light</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css?v=poppins1">
+  <script src="/script.js" defer></script>
+  <style>
+    .equipment-page{background:var(--charcoal);color:var(--ivory)}
+    .equipment-page .header{position:relative;z-index:10}
+    .equipment-page nav [aria-current="page"]{text-decoration:underline;text-decoration-color:var(--amber);text-decoration-thickness:2px;text-underline-offset:9px}
+    .equipment-intro{border-top:1px solid #f4efe51c;padding-block:36px 42px}
+    .equipment-eyebrow{margin:0 0 16px;color:var(--amber);font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+    .equipment-intro h1{font-family:'Poppins',Arial,sans-serif;font-size:clamp(36px,4.5vw,62px);line-height:1.06;letter-spacing:-1.5px;margin:0;max-width:900px}
+    .equipment-lead{max-width:640px;font-size:19px;line-height:1.5;margin:20px 0 0;color:#d2d3ca}
+    .equipment-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;padding-bottom:44px}
+    .equipment-group{border-radius:18px;padding:28px 30px;min-width:0}
+    .equipment-group.lighting{background:var(--amber);color:var(--text)}
+    .equipment-group.grip{background:var(--teal);color:var(--ivory)}
+    .equipment-group.power{background:var(--rust);color:var(--ivory)}
+    .equipment-group.data{background:var(--moss);color:var(--ivory)}
+    .equipment-group .group-top{display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-bottom:1px solid currentColor;padding-bottom:18px;margin-bottom:18px}
+    .equipment-group h2{font-family:'Poppins',Arial,sans-serif;font-size:30px;line-height:1.1;letter-spacing:-.7px;margin:0}
+    .group-number{font-size:12px;letter-spacing:1px;opacity:.7}
+    .equipment-group p{font-size:16px;line-height:1.5;margin:0 0 20px;max-width:450px}
+    .equipment-group ul{list-style:none;margin:0;padding:0}
+    .equipment-group li{padding:10px 0;border-top:1px solid #f4efe52b;font-size:16px;line-height:1.35}
+    .equipment-group.lighting li{border-color:#14181725}
+    .equipment-group li:first-child{border-top:0;padding-top:0}
+    .package-request{border-top:1px solid var(--line);padding-block:38px 44px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+    .package-request h2{font-family:'Poppins',Arial,sans-serif;font-size:clamp(30px,3.4vw,44px);line-height:1.1;letter-spacing:-1px;margin:0 0 16px}
+    .package-request p{font-size:17px;line-height:1.5;max-width:470px;margin:0 0 22px;color:#d2d3ca}
+    .request-details{border-left:2px solid var(--amber);padding-left:26px}
+    .request-details h3{font-size:17px;margin:0 0 14px}
+    .request-details ol{padding-left:20px;margin:0;color:#d2d3ca;font-size:16px;line-height:1.5}
+    .request-details li{padding-left:5px;margin-bottom:10px}
+    .request-details .availability{font-size:13px;margin:18px 0 0;line-height:1.5;color:#aeb5aa}
+    .equipment-page .footer-bottom{border-top:0}
+    @media(max-width:760px){
+      .equipment-page .header .brand{font-size:26px}
+      .equipment-intro{padding-block:26px 32px}
+      .equipment-intro h1{font-size:clamp(34px,8vw,46px);letter-spacing:-1px}
+      .equipment-lead{font-size:17px}
+      .equipment-grid{gap:16px;padding-bottom:30px}
+      .equipment-group{padding:23px 22px}
+      .equipment-group h2{font-size:26px}
+      .equipment-group p,.equipment-group li{font-size:15px}
+      .package-request{gap:28px;padding-block:30px 34px}
+    }
+    @media(max-width:600px){
+      .equipment-grid,.package-request{grid-template-columns:1fr}
+      .equipment-group .group-top{padding-bottom:14px;margin-bottom:14px}
+      .request-details{padding-left:20px}
+    }
+
+    .truck-rate{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:26px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:32px}
+    .truck-rate .equipment-eyebrow{margin-bottom:9px}
+    .truck-rate h2{font-size:23px;line-height:1.25;margin:0;letter-spacing:-.4px}
+    .day-rate{font-size:34px;font-weight:700;color:var(--amber);white-space:nowrap;margin:0}
+    .day-rate span{font-size:16px;font-weight:400;color:var(--ivory)}
+    .inventory-heading{display:flex;justify-content:space-between;gap:20px;align-items:baseline;margin-bottom:18px}
+    .inventory-heading h2{font-size:23px;margin:0}
+    .inventory-heading p{font-size:14px;color:#bfc6ba;margin:0}
+    .inventory-grid{align-items:start;gap:16px}
+    .inventory-group{border-radius:14px;overflow:hidden;min-width:0}
+    .inventory-group summary{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 26px;cursor:pointer;font-weight:700;font-size:23px;line-height:1.2;list-style:none}
+    .inventory-group summary::-webkit-details-marker{display:none}
+    .inventory-toggle::after{content:'+';font-size:26px;font-weight:400}
+    .inventory-group[open] .inventory-toggle::after{content:'−'}
+    .inventory-group summary:focus-visible{outline:3px solid currentColor;outline-offset:-6px;border-radius:14px}
+    .inventory-items{padding:0 26px 24px;font-size:16px;line-height:1.5;overflow-wrap:anywhere}
+    .inventory-items>p{margin:0;padding:10px 0;border-top:1px solid #f4efe533}
+    .inventory-items ul{padding-left:23px;margin:0 0 16px}
+    .inventory-items li{margin:4px 0}
+    .inventory-items li p{margin:0}
+    @media(max-width:760px){.truck-rate h2{font-size:20px}.day-rate{font-size:29px}.inventory-heading{display:block}.inventory-heading p{margin-top:8px}.inventory-group summary{padding:19px 20px;font-size:21px}.inventory-items{padding:0 20px 20px;font-size:15px}}
+    @media(max-width:600px){.truck-rate{align-items:flex-start;flex-direction:column;gap:16px}.inventory-grid{grid-template-columns:1fr}}
+
+    /* Independent stacks; mobile retains the original category order. */
+    .inventory-column{display:flex;flex-direction:column;gap:16px;min-width:0}
+    .inventory-group{position:relative;isolation:isolate;color:var(--ivory)}
+    .inventory-group.teal{background-color:var(--teal)}
+    .inventory-group.rust{background-color:var(--rust)}
+    .inventory-group.moss{background-color:var(--moss)}
+    .inventory-group::before{
+      content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+      opacity:.055;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23grain)' d='M0 0h180v180H0z'/%3E%3C/svg%3E");
+    }
+    .inventory-group>summary,.inventory-group>.inventory-items{position:relative;z-index:1}
+
+    .rental-packages{display:flex;flex-direction:column;gap:20px;padding-bottom:36px}
+    .rental-package{border:1px solid #f4efe524;background:#1c2420;border-radius:18px;overflow:hidden}
+    .rental-package>summary{display:flex;align-items:center;gap:24px;cursor:pointer;padding:28px 30px;list-style:none;background-image:repeating-linear-gradient(0deg,transparent 0 2px,#ffffff03 2px 3px)}
+    .truck-package>summary{background-color:var(--teal)}
+    .dolly-package>summary{background-color:var(--moss)}
+    .camera-package>summary{background-color:var(--rust)}
+    .rental-package>summary::-webkit-details-marker{display:none}
+    .rental-package>summary:focus-visible{outline:3px solid var(--ivory);outline-offset:-6px}
+    .package-label{display:block;flex:1;min-width:0}
+    .package-name{display:block;font-family:'Poppins',Arial,sans-serif;font-size:30px;line-height:1.15;font-weight:700;letter-spacing:-.6px}
+    .package-description{display:block;margin-top:9px;font-size:15px;line-height:1.4;color:#e3e4dc}
+    .package-rate{font-size:28px;font-weight:700;white-space:nowrap}
+    .package-rate>span{font-size:15px;font-weight:400}
+    .package-toggle{flex:0 0 22px;text-align:center}
+    .package-toggle::after{content:'+';font-size:30px;font-weight:400}
+    .rental-package[open]>summary .package-toggle::after{content:'−'}
+    .package-content{padding:24px}
+    .inventory-caption{font-size:20px;margin:0 0 20px}
+    .rental-package .inventory-grid{padding-bottom:0}
+    .inventory-group>h3{position:relative;z-index:1;font-size:23px;line-height:1.2;margin:0;padding:22px 26px;font-weight:700}
+    .package-terms{margin:22px 0 0;font-size:13px;line-height:1.5;color:#bfc6ba}
+    .coming-soon{font-size:17px;line-height:1.5;margin:0;padding:8px 0}
+    .coming-soon a{text-decoration:underline;text-underline-offset:3px}
+    @media(max-width:760px){.rental-package>summary{padding:22px;gap:16px}.package-name{font-size:26px}.package-rate{font-size:25px}.package-content{padding:18px}.inventory-group>h3{font-size:21px;padding:19px 20px}}
+    @media(max-width:600px){.rental-package>summary{display:grid;grid-template-columns:minmax(0,1fr) 22px;gap:14px}.package-label{grid-column:1;grid-row:1}.package-toggle{grid-column:2;grid-row:1}.package-rate{grid-column:1;grid-row:2}.package-description{font-size:14px}.package-content{padding:14px}.rental-packages{gap:16px;padding-bottom:28px}}
+    .expanded-rate{margin:0 0 22px;font-size:28px;line-height:1.3;font-weight:700;color:var(--ivory)}
+    .expanded-rate span{font-size:17px;font-weight:400}
+    @media(max-width:600px){.expanded-rate{font-size:25px;margin-bottom:18px}.expanded-rate span{font-size:16px}}
+
+    .gear-table{width:100%;border-collapse:collapse;table-layout:auto;font-size:16px;line-height:1.45}
+    .gear-table th{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;font-weight:400;opacity:.75;text-align:left;padding:0 0 12px}
+    .gear-table td{padding:11px 0;border-top:1px solid #f4efe52b;vertical-align:top;overflow-wrap:anywhere}
+    .gear-table th:last-child,.gear-table td:last-child{width:48px;padding-left:16px;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+    .gear-table td:last-child{color:#e0e4db}
+    .gear-table .gear-subitem td:first-child{padding-left:18px;font-size:14px;color:#d0dbd3}
+    .gear-table .gear-subitem td{padding-top:7px;padding-bottom:7px;border-top-color:#f4efe514}
+    .quantity-note{font-size:13px;color:#bdc6ba;line-height:1.5;margin:-7px 0 22px}
+    .dolly-model{font-size:17px;margin:-10px 0 24px;color:#d2d3ca}
+    .dolly-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:18px}
+    .optional-addons{margin-top:24px;padding:24px 2px 0;border-top:1px solid var(--line)}
+    .optional-addons h3{font-size:14px;text-transform:uppercase;letter-spacing:1.5px;color:var(--amber);margin:0 0 18px}
+    .addon-table th:nth-child(2),.addon-table td:nth-child(2){width:60px;text-align:right;padding-left:14px;white-space:nowrap}
+    .addon-table th:last-child,.addon-table td:last-child{width:130px}
+    @media(max-width:600px){.dolly-groups{grid-template-columns:1fr;gap:16px}.gear-table{font-size:14px}.gear-table th{font-size:10px}.gear-table td{padding-block:10px}.gear-table th:last-child,.gear-table td:last-child{padding-left:10px}.gear-table .gear-subitem td:first-child{font-size:13px;padding-left:12px}.addon-table th:last-child,.addon-table td:last-child{width:85px}.addon-table th:last-child{white-space:normal}.addon-table th:nth-child(2),.addon-table td:nth-child(2){width:40px;padding-left:8px}}
+
+    .high-output-note{max-width:700px;margin:0 0 22px;color:#d2d3ca;font-size:16px;line-height:1.6}
+    .high-output-table th:last-child,.high-output-table td:last-child{width:145px}
+    @media(max-width:600px){.high-output-note{font-size:14px}.high-output-table th:last-child,.high-output-table td:last-child{width:100px}.high-output-table th:last-child{white-space:normal}}
+
+    /* Fixture specs expand within the equipment row, independently of the package. */
+    .inventory-group .fixture-details>summary{padding:0;gap:12px;align-items:flex-start;font-size:inherit;font-weight:400;line-height:1.45;border-radius:4px}
+    .inventory-group .fixture-details>summary:focus-visible{outline:2px solid var(--amber);outline-offset:4px;border-radius:4px}
+    .fixture-accessories{color:#d0dbd3}
+    .fixture-info{display:inline-flex;align-items:center;gap:5px;flex-shrink:0;min-height:28px;color:var(--amber);font-size:12px;font-weight:600;white-space:nowrap}
+    .fixture-info>span{font-size:19px;line-height:1}
+    .fixture-details[open] .fixture-info{color:var(--ivory)}
+    .fixture-sheet{margin-top:16px;padding:16px;background:#0003;border:1px solid #f4efe526;border-radius:10px;font-size:13px;line-height:1.5}
+    .fixture-sheet-title{margin:0 0 12px;font-weight:700;color:var(--amber)}
+    .fixture-sheet dl{margin:0 0 14px}
+    .fixture-sheet dl>div{padding:8px 0;border-bottom:1px solid #f4efe51a}
+    .fixture-sheet dt{color:#bdcbc5;font-size:11px}
+    .fixture-sheet dd{margin:2px 0 0}
+    .fixture-sheet a{display:inline-block;text-decoration:underline;text-underline-offset:3px}
+    @media(max-width:600px){.inventory-group .fixture-details>summary{flex-wrap:wrap;gap:4px}.fixture-sheet{padding:12px}}
+  </style>
+<style id="matching-bottom-sections">
+/* Shared warm-white closing section, matching the Work page. */
+.site-bottom.wrap{
+  width:100%;max-width:none;margin-inline:0;
+  padding:44px max(44px,calc((100% - 1280px)/2));
+  background:#f4efe5;color:#101615;border-top:0;
+}
+.site-bottom h2,.site-bottom h3{color:var(--text)}
+.site-bottom h2::before{
+  content:"";display:block;width:42px;height:3px;
+  background:var(--amber);margin-bottom:24px;
+}
+.site-bottom p,.site-bottom ol,.site-bottom .availability{color:#39423d}
+.site-bottom .equipment-eyebrow,.site-bottom .services-kicker{color:#6b5027}
+.site-bottom .request-details,.site-bottom .planning-note{border-left-color:var(--amber)}
+.site-bottom a:focus-visible{outline-color:var(--teal)}
+.site-bottom .about-equipment-link:hover{color:var(--teal)}
+.contact-next{display:flex;align-items:center;justify-content:space-between;gap:38px}
+.contact-next h2{
+  font-family:'Poppins',Arial,sans-serif;font-size:clamp(30px,3.4vw,44px);
+  line-height:1.1;letter-spacing:-1px;margin:0 0 16px;
+}
+.contact-next p{font-size:17px;line-height:1.5;max-width:620px;margin:0}
+.contact-next .button{flex-shrink:0}
+@media(max-width:1050px){.site-bottom.wrap{padding-inline:30px}}
+@media(max-width:760px){
+  .site-bottom.wrap{padding:34px 20px}
+  .contact-next{flex-direction:column;align-items:flex-start;gap:24px}
+  .contact-next h2{font-size:32px}
+}
+
+/* Continue the ivory section through the final brand/footer row. */
+body .footer.wrap{
+  width:100%;max-width:none;margin:0;
+  padding-inline:max(44px,calc((100% - 1280px)/2));
+  background:#f4efe5;color:#101615;border-top:0;
+}
+body .footer .footer-bottom{border-top:1px solid #10161526;color:#101615}
+body .footer .footer-bottom p{color:#485149}
+body .footer .footer-bottom a{color:#101615}
+body .footer a:focus-visible{outline-color:#073b43}
+@media(max-width:1050px){body .footer.wrap{padding-inline:30px}}
+@media(max-width:760px){body .footer.wrap{padding-inline:20px}}
+
+</style>
+</head>
+<body class="equipment-page">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="header wrap">
+    <a class="brand" href="/" aria-label="Led by Light home">LED BY LIGHT <span class="brand-tag">PITTSBURGH GRIP &amp; LIGHTING</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="navigation" aria-label="Main navigation">
+      <a href="/services">Services</a><a href="/equipment" aria-current="page">Equipment</a><a href="/work">Work</a><a href="/about">About</a><a class="button small" href="/contact">Contact Us</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="equipment-intro wrap" aria-labelledby="equipment-title">
+      <p class="equipment-eyebrow">Equipment</p>
+      <h1 id="equipment-title">The right gear.<br>Ready for your next shoot.</h1>
+      <p class="equipment-lead">Explore our truck, Fisher dolly, and camera support packages. Open a package below to view the details, or get in touch about a specific setup.</p>
+    </section>
+    <section class="rental-packages wrap" aria-label="Equipment packages">
+      <details class="rental-package truck-package">
+        <summary><span class="package-label"><span class="package-name">Truck Package</span><span class="package-description">2022 Isuzu NRR · 16 ft with liftgate</span></span><span class="package-toggle" aria-hidden="true"></span></summary>
+        <div class="package-content"><p class="expanded-rate">$1,500<span> / day</span></p><h2 class="inventory-caption">What’s on the truck</h2><p class="quantity-note">Indented rows list the options or accessories beneath each item. A dash means a quantity was not specified.</p>
+        <div class="equipment-grid inventory-grid">
+<article class="inventory-group teal"><h3>RGB Lights</h3><div class="inventory-items"><table class="gear-table" aria-label="RGB Lights"><thead><tr><th scope="col">Equipment</th><th scope="col">QTY</th></tr></thead><tbody><tr><td><details class="fixture-details">
+<summary><span>ARRI SkyPanel S60 <span class="fixture-accessories">(Chimera w/ Grid, 50º Honeycrate)</span></span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<div class="fixture-sheet">
+<p class="fixture-sheet-title">SkyPanel S60-C · Quick specs</p>
+<dl>
+<div><dt>Light source</dt><dd>RGBW LED soft light</dd></div>
+<div><dt>Color temperature</dt><dd>2,800–10,000 K; green/magenta adjustment</dd></div>
+<div><dt>Power</dt><dd>400 W max; 100–240 V AC via power supply</dd></div>
+<div><dt>Dimming</dt><dd>0–100%</dd></div>
+<div><dt>Color quality</dt><dd>Average CRI &gt;95 / TLCI &gt;90</dd></div>
+<div><dt>Beam / aperture</dt><dd>105° half-peak / 645 × 300 mm</dd></div>
+<div><dt>Output at 3 m</dt><dd>1,535 lux at 5,600 K with standard diffusion (LE 2)</dd></div>
+<div><dt>Control</dt><dd>Onboard, 5-pin DMX, RDM, Art-Net, sACN</dd></div>
+<div><dt>Mount</dt><dd>28 mm junior pin</dd></div>
+<div><dt>Weight</dt><dd>Approx. 12.6 kg / 27.8 lb (manual version)</dd></div>
+</dl>
+<a href="https://www.arri.com/resource/blob/31124/a3ef8cd7d9f50f5dcd314e9e1b2299de/arri-skypanel-s60-c-data-sheet-en-data.pdf" target="_blank" rel="noopener noreferrer">Full ARRI datasheet (PDF) <span aria-hidden="true">↗</span></a>
+</div>
+</details></td><td>1</td></tr><tr><td>Arri Skypanel S30</td><td>1</td></tr><tr><td>Nanlux Dyno 1200C</td><td>1</td></tr><tr><td>Creamsource Vortex 8</td><td>2</td></tr><tr><td>Creamsource Vortex 4</td><td>2</td></tr><tr><td>Lite Panels Gemini 2x1 (Chimera, Snapgrid)</td><td>2</td></tr><tr><td>Litemat Spectrum 2L (Snapgrid)</td><td>2</td></tr><tr><td>Astera Titan Tubes (Snapgrid, Honeycrate)</td><td>8</td></tr><tr><td>Astera Helios Tubes (Snapgrid, Honeycrate)</td><td>8</td></tr><tr><td>Astera NYX Bulbs</td><td>16</td></tr><tr><td>Astera Luna Bulbs</td><td>8</td></tr><tr><td>Digital Sputnik DS3 Modular Kit</td><td>1</td></tr><tr><td>Kino Flo Freestyle 31</td><td>2</td></tr><tr><td>Hive Wasp 100-C</td><td>1</td></tr><tr><td>Nanlux 60C (Leko Attachment, Lantern, Softbox)</td><td>1</td></tr><tr><td>Nanlite Forza 60C (Lantern, Softbox,Projector)</td><td>1</td></tr><tr><td>Nanlite Pavo Tube 6C</td><td>2</td></tr><tr><td>Aputure Storm 80C (Softbox, Lantern)</td><td>2</td></tr><tr><td>Aputure MC</td><td>4</td></tr><tr><td>Aputure MC Pro</td><td>8</td></tr><tr><td>Aputure Infinibars</td><td>8</td></tr><tr><td>Aputure MC Pro 1’ Tube (Snapgrid)</td><td>2</td></tr></tbody></table></div></article>
+<article class="inventory-group rust"><h3>LED Lights</h3><div class="inventory-items"><table class="gear-table" aria-label="LED Lights"><thead><tr><th scope="col">Equipment</th><th scope="col">QTY</th></tr></thead><tbody><tr><td>Nanlux 2400B</td><td>1</td></tr><tr><td>Mole 10K Daylight</td><td>1</td></tr><tr><td>Aputure 1200x (Fresnel)</td><td>1</td></tr><tr><td>Aputure 1200d (Spotlight Max 36º)</td><td>1</td></tr><tr><td>Aputure 600d (F10 Fresnel, BarnDoors, 5’ Octobox w/ grid, 3’ Lantern)</td><td>2</td></tr><tr><td>Aputure 300x (Spotlight 36º, Fresnel 2X, Barndoors)</td><td>1</td></tr><tr><td>Aputure Storm 400X</td><td>2</td></tr><tr><td>LiteTile+ 4&#x27;x4&#x27; Kit</td><td>2</td></tr><tr><td>Litemat 8 Plus</td><td>1</td></tr><tr><td>Litemat 4 Plus (Snapgrid)</td><td>4</td></tr><tr><td>Litemat 4 S2</td><td>3</td></tr><tr><td>Litemat 2 S2 (Snapgrid)</td><td>1</td></tr><tr><td>Astra 6X Bi-Color (Softbox, Snapgrid)</td><td>3</td></tr><tr><td>Astra 4X Bi-Color (Softbox, Snapgrid)</td><td>2</td></tr><tr><td>Astra 4X Daylight (Softbox, Snapgrid)</td><td>1</td></tr><tr><td>Aputure 60x</td><td>2</td></tr><tr><td>Dracast Silkray 400B</td><td>2</td></tr><tr><td>Draycast Calmux</td><td>1</td></tr><tr><td>Alladin Eye-Light</td><td>1</td></tr></tbody></table></div></article>
+<article class="inventory-group moss"><h3>HMI Lights</h3><div class="inventory-items"><table class="gear-table" aria-label="HMI Lights"><thead><tr><th scope="col">Equipment</th><th scope="col">QTY</th></tr></thead><tbody><tr><td>Arri M18</td><td>1</td></tr><tr><td>Joker2 800</td><td>1</td></tr></tbody></table></div></article>
+<article class="inventory-group teal"><h3>Tungsten Lights</h3><div class="inventory-items"><table class="gear-table" aria-label="Tungsten Lights"><thead><tr><th scope="col">Equipment</th><th scope="col">QTY</th></tr></thead><tbody><tr><td>Arri T1 1000w</td><td>2</td></tr><tr><td>Arri Open face 750w</td><td>1</td></tr><tr><td>Arri 650w</td><td>2</td></tr><tr><td>ETC Source Four Leko 36° 750w</td><td>2</td></tr><tr><td>Arri 300w</td><td>3</td></tr><tr><td>Arri 150w</td><td>1</td></tr></tbody></table></div></article>
+<article class="inventory-group rust"><h3>Stands</h3><div class="inventory-items"><table class="gear-table" aria-label="Stands"><thead><tr><th scope="col">Equipment</th><th scope="col">QTY</th></tr></thead><tbody><tr><td>Three Riser Combo</td><td>4</td></tr><tr><td>Two Riser Combo</td><td>3</td></tr><tr><td>Mini Mombo Combo</td><td>2</td></tr><tr><td>Mombo Combo</td><td>2</td></tr><tr><td>Minivator Crank Stand</td><td>1</td></tr><tr><td>Low Boy Combo</td><td>2</td></tr><tr><td>Triple Riser Baby</td><td>5</td></tr><tr><td>Two Riser Baby</td><td>2</td></tr><tr><td>Overhead Stand 19&#x27;</td><td>2</td></tr><tr><td>Lightweight Kit Stand</td><td>5</td></tr><tr><td>Preemie</td><td>2</td></tr><tr><td>Rolling Baby</td><td>2</td></tr><tr><td>C Stand</td><td>14</td></tr></tbody></table></div></article>
+<article class="inventory-group moss"><h3>Flags</h3><div class="inventory-items"><table class="gear-table" aria-label="Flags"><thead><tr><th scope="col">Equipment</th><th scope="col">QTY</th></tr></thead><tbody><tr><td>Floppy</td><td>8</td></tr><tr><td>4x4 Frame</td><td>8</td></tr><tr class="gear-subitem"><td>216</td><td>—</td></tr><tr class="gear-subitem"><td>250</td><td>—</td></tr><tr class="gear-subitem"><td>251</td><td>—</td></tr><tr class="gear-subitem"><td>Opal</td><td>—</td></tr><tr class="gear-subitem"><td>Bleached Muslin Slip on</td><td>—</td></tr><tr class="gear-subitem"><td>Unbleached Muslin Slip on</td><td>—</td></tr><tr class="gear-subitem"><td>Eggcrate</td><td>—</td></tr><tr><td>2x3 Solid</td><td>6</td></tr><tr><td>2x3 Double</td><td>3</td></tr><tr><td>2x3 Single</td><td>3</td></tr><tr><td>2x3 Silk</td><td>1</td></tr><tr><td>18&quot;x24&quot; Solid</td><td>2</td></tr><tr><td>18&quot;x24&quot; Double</td><td>1</td></tr><tr><td>18&quot;x24&quot; Single</td><td>1</td></tr><tr><td>18&quot;x24&quot; Silk</td><td>1</td></tr></tbody></table></div></article>
+<article class="inventory-group teal"><h3>Electric</h3><div class="inventory-items"><table class="gear-table" aria-label="Electric"><thead><tr><th scope="col">Equipment</th><th scope="col">QTY</th></tr></thead><tbody><tr><td>50ft Stinger</td><td>6</td></tr><tr><td>25ft Stinger</td><td>18</td></tr><tr><td>Dimmer 1000w</td><td>2</td></tr><tr><td>Dimmer 600w</td><td>2</td></tr><tr><td>Socket Dimmer</td><td>2</td></tr><tr><td>Quad Box</td><td>2</td></tr><tr><td>Cube Tap</td><td>8</td></tr><tr><td>Ground Adapter</td><td>5</td></tr><tr><td>Uncle Fester</td><td>2</td></tr><tr><td>Pig Nose</td><td>2</td></tr><tr><td>Black Zip Cord</td><td>1</td></tr><tr><td>Honda Generator 3000w</td><td>1</td></tr></tbody></table></div></article>
+<article class="inventory-group rust"><h3>Grip</h3><div class="inventory-items"><table class="gear-table" aria-label="Grip"><thead><tr><th scope="col">Equipment</th><th scope="col">QTY</th></tr></thead><tbody><tr><td>Fotodiox 48x72&quot; 5-in-1 Reflector</td><td>1</td></tr><tr><td>Quacker Clamp</td><td>3</td></tr><tr><td>Cardellini Clamp - End Jaw 2&quot;</td><td>2</td></tr><tr><td>Cardellini Clamp - End Jaw 6&quot;</td><td>2</td></tr><tr><td>Cardellini Clamp - Center Jaw 3”</td><td>2</td></tr><tr><td>Baby Grid Clamp</td><td>2</td></tr><tr><td>Junior Grid Clamp Receiver</td><td>2</td></tr><tr><td>Junior Grid Clamp</td><td>2</td></tr><tr><td>Baby Pipe Clamp</td><td>2</td></tr><tr><td>Junior Grip head 4&quot; (Lolli-pop)</td><td>4</td></tr><tr><td>C-Clamp w/ Baby Pins - 6&quot;</td><td>2</td></tr><tr><td>Baby Sitt’r</td><td>2</td></tr><tr><td>Junior to Baby Adapter</td><td>2</td></tr><tr><td>Mafer Clamp</td><td>4</td></tr><tr><td>Python Clamp w/ Baby Pin</td><td>2</td></tr><tr><td>Python Clamp w/ Grip Joint</td><td>2</td></tr><tr><td>Pigeon Plate</td><td>6</td></tr><tr><td>35lb Sand Bag</td><td>6</td></tr><tr><td>20lb Sand Bag</td><td>16</td></tr><tr><td>18in Offset Arm</td><td>1</td></tr><tr><td>Baby Double Header</td><td>1</td></tr><tr><td>Scissor Clamp</td><td>2</td></tr><tr><td>Nesting Apple Box Set</td><td>2</td></tr><tr><td>Apple Box Set</td><td>2</td></tr><tr><td>4ft Ladder</td><td>1</td></tr><tr><td>8ft Ladder</td><td>1</td></tr><tr><td>Sound Blanket</td><td>2</td></tr><tr><td>4x4&#x27; Bead Board</td><td>2</td></tr><tr><td>2x4&#x27; Bead Board</td><td>2</td></tr><tr><td>1x1 mirror</td><td>2</td></tr><tr><td>American Menace Arm Kit</td><td>1</td></tr><tr><td>Speed Rail Ear</td><td>2</td></tr><tr><td>Speed Rail 12&#x27;</td><td>2</td></tr><tr><td>Speed Rail 8&#x27;</td><td>2</td></tr><tr><td>Speed Rail 5&#x27;</td><td>2</td></tr><tr><td>Speed Rail 6’</td><td>2</td></tr><tr><td>Safety Chains</td><td>—</td></tr><tr><td>A Clamp (1, 2, 3)</td><td>—</td></tr><tr><td>C47s</td><td>—</td></tr></tbody></table></div></article>
+<article class="inventory-group moss"><h3>Frames & Rags</h3><div class="inventory-items"><table class="gear-table" aria-label="Frames &amp; Rags"><thead><tr><th scope="col">Equipment</th><th scope="col">QTY</th></tr></thead><tbody><tr><td>12x12 Frame</td><td>1</td></tr><tr class="gear-subitem"><td>Silent Full Grid</td><td>—</td></tr><tr class="gear-subitem"><td>Silent Light Grid</td><td>—</td></tr><tr class="gear-subitem"><td>Silent Quarter Grid</td><td>—</td></tr><tr class="gear-subitem"><td>Solid</td><td>2</td></tr><tr class="gear-subitem"><td>Net (Single, Double)</td><td>—</td></tr><tr class="gear-subitem"><td>Ultrabounce</td><td>—</td></tr><tr><td>8x8 Frame</td><td>1</td></tr><tr class="gear-subitem"><td>Silent Full Grid</td><td>—</td></tr><tr class="gear-subitem"><td>Silent Light Grid</td><td>—</td></tr><tr class="gear-subitem"><td>Silent Quarter Grid</td><td>—</td></tr><tr class="gear-subitem"><td>Ultrabounce</td><td>—</td></tr><tr class="gear-subitem"><td>Green Screen</td><td>—</td></tr><tr class="gear-subitem"><td>Solid</td><td>—</td></tr><tr><td>6x6 Frame</td><td>1</td></tr><tr class="gear-subitem"><td>Silent Full Grid</td><td>—</td></tr><tr class="gear-subitem"><td>Silent Light Grid</td><td>—</td></tr><tr class="gear-subitem"><td>Silent Quarter Grid</td><td>—</td></tr><tr class="gear-subitem"><td>Ultrabounce</td><td>—</td></tr><tr class="gear-subitem"><td>Bleached Muslin</td><td>—</td></tr><tr class="gear-subitem"><td>Silk</td><td>—</td></tr><tr class="gear-subitem"><td>Solid</td><td>—</td></tr><tr class="gear-subitem"><td>Net (Single, Double)</td><td>—</td></tr><tr class="gear-subitem"><td>Egg Crate 50°</td><td>—</td></tr></tbody></table></div></article>
+<article class="inventory-group teal"><h3>Carts</h3><div class="inventory-items"><table class="gear-table" aria-label="Carts"><thead><tr><th scope="col">Equipment</th><th scope="col">QTY</th></tr></thead><tbody><tr><td>Back Stage Super Duz-All Mini Cart</td><td>—</td></tr><tr><td>Back Stage EZ Load Grip/Electric Cart</td><td>—</td></tr><tr><td>Back Stage 4x4 Mini Cart</td><td>—</td></tr><tr><td>Back Stage Head Mini Cart</td><td>—</td></tr><tr><td>BackStage Kino Cart</td><td>—</td></tr></tbody></table></div></article>
+        </div>
+        <section class="optional-addons high-output-addons" aria-labelledby="high-output-title">
+<h3 id="high-output-title">Higher-output fixtures</h3>
+<p class="high-output-note">Need more output? These larger fixtures can be added to the truck package at an additional daily cost. They are not included in the truck package rate.</p>
+<table class="gear-table high-output-table" aria-label="Higher-output fixtures and additional daily rates">
+<thead><tr><th scope="col">Equipment</th><th scope="col">Additional rate</th></tr></thead>
+<tbody>
+<tr><td>Aputure XT52</td><td>$375/day</td></tr>
+<tr><td>Aputure CS32</td><td>$250/day</td></tr>
+<tr><td>Nanlux 2400B</td><td>$250/day</td></tr>
+<tr><td>Godox Kowled AM1600r 8×8</td><td>$375/day</td></tr>
+</tbody></table>
+</section>
+        <p class="package-terms">Truck package price does not include labor, mileage, or expendables. A minimum of one crew member must accompany the truck.</p></div>
+      </details>
+      <details class="rental-package dolly-package">
+        <summary><span class="package-label"><span class="package-name">Fisher Dolly Package</span><span class="package-description">J.L Fisher Model 10 Dolly</span></span><span class="package-toggle" aria-hidden="true"></span></summary>
+        <div class="package-content"><p class="expanded-rate"><span>Starts at </span>$425<span>/day</span></p><p class="dolly-model">J.L Fisher Model 10 Dolly</p><div class="dolly-groups"><article class="inventory-group teal"><h3>Camera Mounting</h3><div class="inventory-items"><table class="gear-table" aria-label="Camera Mounting"><thead><tr><th scope="col">Equipment</th><th scope="col">QTY</th></tr></thead><tbody><tr><td>4 Way Heavy Duty Level Head</td><td>1</td></tr><tr><td>4 Way Low Level Head</td><td>1</td></tr><tr><td>Camera Riser 6”</td><td>1</td></tr><tr><td>Camera Riser 12”</td><td>1</td></tr><tr><td>90° Camera Angle Plate</td><td>1</td></tr><tr><td>Camera Offset 10”</td><td>1</td></tr><tr><td>Camera Offset 24”</td><td>1</td></tr><tr><td>Rotating Offset</td><td>1</td></tr></tbody></table></div></article><article class="inventory-group rust"><h3>Seating</h3><div class="inventory-items"><table class="gear-table" aria-label="Seating"><thead><tr><th scope="col">Equipment</th><th scope="col">QTY</th></tr></thead><tbody><tr><td>Small Seat</td><td>1</td></tr><tr><td>Large Seat</td><td>1</td></tr><tr><td>Seat Offset High</td><td>1</td></tr><tr><td>Seat Offset Straight</td><td>1</td></tr><tr><td>Seat Riser Adjustable</td><td>1</td></tr></tbody></table></div></article><article class="inventory-group moss"><h3>Boards &amp; Platforms</h3><div class="inventory-items"><table class="gear-table" aria-label="Boards &amp; Platforms"><thead><tr><th scope="col">Equipment</th><th scope="col">QTY</th></tr></thead><tbody><tr><td>Low Side Board</td><td>2</td></tr><tr><td>Front Boards</td><td>2</td></tr><tr><td>High Side Board</td><td>2</td></tr><tr><td>Beam Step Standing Platform</td><td>1</td></tr><tr><td>Diving boards</td><td>2</td></tr><tr><td>Front Board Bridge</td><td>1</td></tr></tbody></table></div></article><article class="inventory-group teal"><h3>Handling &amp; Accessories</h3><div class="inventory-items"><table class="gear-table" aria-label="Handling &amp; Accessories"><thead><tr><th scope="col">Equipment</th><th scope="col">QTY</th></tr></thead><tbody><tr><td>Push Post</td><td>2</td></tr><tr><td>Carry Handle</td><td>2</td></tr><tr><td>Front Pins</td><td>2</td></tr><tr><td>Knee Bumper</td><td>1</td></tr><tr><td>Battery Box</td><td>1</td></tr></tbody></table></div></article></div><section class="optional-addons" aria-labelledby="addons-title"><h3 id="addons-title">Optional Add-ons</h3><table class="gear-table addon-table"><thead><tr><th scope="col">Equipment</th><th scope="col">QTY</th><th scope="col">Additional rate</th></tr></thead><tbody><tr><td>Soft Compound Wheel Set</td><td>1 set</td><td>$60/day</td></tr><tr><td>4 ft GFM Slider</td><td>—</td><td>$200/day</td></tr></tbody></table></section></div></details>
+<details class="rental-package camera-package">
+        <summary><span class="package-label"><span class="package-name">Camera and Support</span><span class="package-description">Camera equipment &amp; accessories</span></span><span class="package-toggle" aria-hidden="true"></span></summary>
+        <div class="package-content"><p class="coming-soon">Equipment list coming soon. <a href="/contact">Contact us</a> with your camera and support needs.</p></div>
+      </details>
+    </section>
+    <section class="package-request wrap site-bottom" aria-labelledby="package-request-title">
+      <div>
+        <p class="equipment-eyebrow">Build your package</p>
+        <h2 id="package-request-title">A few pieces.<br>Or the truck package.</h2>
+        <p>Send your gear list, or tell us what you’re shooting. We’ll work through the equipment and on-set support with you.</p>
+        <a class="button" href="/contact">Ask about a package <span aria-hidden="true">&nbsp;→</span></a>
+      </div>
+      <div class="request-details">
+        <h3>Tell us a little about the shoot.</h3>
+        <ol><li>Your shoot dates and location</li><li>The equipment or lighting setup you have in mind</li><li>Whether you need equipment only or crew support</li></ol>
+        <p class="availability">Additional lighting and grip equipment available—contact us with specific requests and to confirm availability.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="footer wrap"><div class="footer-bottom"><a class="brand" href="/">LED BY LIGHT</a><p>PITTSBURGH GRIP &amp; LIGHTING</p></div></footer>
+<script>
+(() => {
+  const grid = document.querySelector('.inventory-grid');
+  const cards = Array.from(grid.children);
+  const desktop = window.matchMedia('(min-width:601px)');
+  function arrangeColumns() {
+    if (desktop.matches) {
+      const columns = [document.createElement('div'), document.createElement('div')];
+      columns.forEach(column => column.className = 'inventory-column');
+      cards.forEach((card, index) => columns[index % 2].append(card));
+      grid.replaceChildren(...columns);
+    } else {
+      grid.replaceChildren(...cards);
+    }
+  }
+  desktop.addEventListener('change', arrangeColumns);
+  arrangeColumns();
+})();
+</script>
+</body>
+</html>
