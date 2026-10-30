@@ -1,6 +1,5 @@
-/* Led by Light contact form — submit to FormSubmit without leaving the page.
-   The endpoint comes from the form's action attribute in /contact/index.html.
-   This also supports FormSubmit's opaque endpoint token instead of an email. */
+/* Led by Light contact form — submit to Formspree without leaving the page.
+   The endpoint comes from the form's action attribute in /contact/index.html. */
 (() => {
   const form = document.querySelector('#inquiry');
   const status = document.querySelector('#form-status');
@@ -18,12 +17,8 @@
     let endpoint;
     try {
       endpoint = new URL(rawEndpoint, window.location.href);
-      if (endpoint.protocol !== 'https:' || endpoint.hostname !== 'formsubmit.co') {
+      if (endpoint.protocol !== 'https:' || endpoint.hostname !== 'formspree.io' || !/^\/f\/[a-zA-Z0-9]+$/.test(endpoint.pathname)) {
         throw new Error('Invalid form endpoint');
-      }
-      // FormSubmit's AJAX endpoint returns JSON instead of redirecting.
-      if (!endpoint.pathname.startsWith('/ajax/')) {
-        endpoint.pathname = '/ajax' + endpoint.pathname;
       }
     } catch {
       status.textContent = 'The contact form is not configured correctly. Please email us directly.';
@@ -47,10 +42,13 @@
         body: JSON.stringify(fields),
         signal: controller.signal
       });
-      if (!response.ok) throw new Error('Submission request failed');
-      const result = await response.json();
-      if (result.success !== true && result.success !== 'true') {
-        throw new Error(result.message || 'Submission not confirmed');
+      if (!response.ok) {
+        const result = await response.json().catch(() => null);
+        const errors = Array.isArray(result?.errors)
+          ? result.errors.map((error) => error.message).filter((message) => typeof message === 'string').join(' ')
+          : '';
+        status.textContent = errors || 'We could not send your inquiry. Please try again or email us directly.';
+        return;
       }
       status.textContent = "Thanks! Your inquiry has been sent. We'll be in touch soon.";
       form.reset();
