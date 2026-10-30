@@ -16,7 +16,7 @@
 .site-bottom .about-equipment-link:hover{color:var(--teal)}
 .contact-next{display:flex;align-items:center;justify-content:space-between;gap:38px}
 .contact-next h2{
-  font-family:Geometric,Arial,sans-serif;font-size:clamp(30px,3.4vw,44px);
+  font-family:'Poppins',Arial,sans-serif;font-size:clamp(30px,3.4vw,44px);
   line-height:1.1;letter-spacing:-1px;margin:0 0 16px;
 }
 .contact-next p{font-size:17px;line-height:1.5;max-width:620px;margin:0}

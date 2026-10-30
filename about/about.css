@@ -6,7 +6,7 @@
 .about-page .intro{max-width:520px}
 .about-story{background:var(--ivory);color:var(--text);padding:44px 0 38px}
 .about-intro{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:32px}
-.about-intro h2,.about-cta h2{margin:0;font-family:Body,Arial,sans-serif;font-size:clamp(30px,3.6vw,49px);font-weight:700;line-height:1.08;letter-spacing:-1.7px}
+.about-intro h2,.about-cta h2{margin:0;font-family:'Poppins',Arial,sans-serif;font-size:clamp(30px,3.6vw,49px);font-weight:700;line-height:1.08;letter-spacing:-1.7px}
 .about-intro>p{margin:0;padding-left:38px;border-left:1px solid #10161533;font-size:19px;line-height:1.45}
 .about-principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .about-card{display:grid;grid-template-columns:minmax(0,42%) minmax(0,58%);align-items:center;min-width:0;gap:0;padding:20px 20px 20px 12px;border-radius:20px}
