@@ -93,3 +93,31 @@
   .inquiry-help{padding:22px}
   .send-inquiry{min-height:48px}
 }
+
+
+/* Force Poppins across the entire contact page */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+.contact-page,
+.contact-page .brand,
+.contact-page .brand-tag,
+.contact-page nav,
+.contact-page .hero,
+.contact-page .compact-intro,
+.contact-page .inquiry-section,
+.contact-page .inquiry-help,
+.contact-page .inquiry-form-column,
+.contact-page .field input,
+.contact-page .field textarea,
+.contact-page .button,
+.contact-page .footer {
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+.contact-page h1,
+.contact-page h2,
+.contact-page h3 {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-weight: 800;
+}
+
