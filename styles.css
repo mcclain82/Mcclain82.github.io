@@ -398,12 +398,11 @@ a:focus-visible,button:focus-visible{outline:3px solid #fff;outline-offset:5px}
   .contact-copy .button{min-height:42px;padding:10px 12px;font-size:12px}
 }
 
-/* Homepage feature sections: compact desktop/tablet layout. */
-@media (min-width:761px){
+/* Homepage feature sections: matching columns, artwork, and spacing. */
   .package:has(> .package-copy > #package-title){
     width:min(1080px,calc(100% - 88px));
     grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-    gap:36px;
+    gap:clamp(24px,3vw,36px);
     padding-block:32px 36px;
   }
   .package:has(> .package-copy > #package-title) .package-copy{padding-right:0}
@@ -411,7 +410,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #fff;outline-offset:5px}
     width:min(1080px,100%);
     margin-inline:auto;
     grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-    gap:36px;
+    gap:clamp(24px,3vw,36px);
     padding-block:32px 36px;
   }
   .footer > .contact-section:has(#contact-title) .contact-copy{padding-left:0}
@@ -432,7 +431,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #fff;outline-offset:5px}
   }
   .package #package-title,
   .footer > .contact-section #contact-title{
-    font-size:clamp(30px,3vw,40px);
+    font-size:clamp(26px,3vw,40px);
     letter-spacing:-1.2px;
     line-height:1.08;
     margin-bottom:16px;
@@ -445,11 +444,24 @@ a:focus-visible,button:focus-visible{outline:3px solid #fff;outline-offset:5px}
   .footer > .contact-section:has(#contact-title) .button{
     min-height:46px;padding:12px 20px;font-size:15px;
   }
-}
 @media (min-width:761px) and (max-width:1050px){
   .package:has(> .package-copy > #package-title){width:calc(100% - 60px)}
   .package:has(> .package-copy > #package-title),
   .footer > .contact-section:has(#contact-title){gap:28px;padding-block:28px 30px}
+}
+@media (max-width:760px){
+  .package:has(> .package-copy > #package-title){width:calc(100% - 40px)}
+  .package:has(> .package-copy > #package-title),
+  .footer > .contact-section:has(#contact-title){padding-block:32px}
+  .package:has(#package-title) .package-copy p,
+  .footer > .contact-section:has(#contact-title) .contact-copy p{font-size:16px}
+}
+@media (max-width:600px){
+  .package:has(> .package-copy > #package-title),
+  .footer > .contact-section:has(#contact-title){grid-template-columns:minmax(0,1fr);gap:24px}
+  .package:has(#package-title) .truck-panel{grid-row:1}
+  .package #package-title,
+  .footer > .contact-section #contact-title{font-size:32px}
 }
 
 /* Shared masthead: evenly spaced tagline aligned to the company name. */
