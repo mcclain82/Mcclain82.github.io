@@ -177,6 +177,11 @@
     .fixture-sheet dd{margin:2px 0 0}
     .fixture-sheet a{display:inline-block;text-decoration:underline;text-underline-offset:3px}
     @media(max-width:600px){.inventory-group .fixture-details>summary{flex-wrap:wrap;gap:4px}.fixture-sheet{padding:12px}}
+    .control-benefits{position:relative;z-index:1}
+    .inventory-group .control-benefits>summary{padding:22px 26px;align-items:center;flex-wrap:nowrap;gap:16px}
+    .control-benefits>summary h3{margin:0;font-size:23px;line-height:1.2}
+    .control-benefits>.fixture-sheet{margin:0 26px 24px}
+    @media(max-width:760px){.inventory-group .control-benefits>summary{padding:19px 20px}.control-benefits>summary h3{font-size:21px}.control-benefits>.fixture-sheet{margin:0 20px 20px}}
   </style>
 <style id="matching-bottom-sections">
 /* Shared warm-white closing section, matching the Work page. */
@@ -261,7 +266,19 @@
 <article class="inventory-group teal"><h3>Carts</h3><div class="inventory-items"><table class="gear-table" aria-label="Carts"><thead><tr><th scope="col">Equipment</th><th scope="col">QTY</th></tr></thead><tbody><tr><td>Back Stage Super Duz-All Mini Cart</td><td>—</td></tr><tr><td>Back Stage EZ Load Grip/Electric Cart</td><td>—</td></tr><tr><td>Back Stage 4x4 Mini Cart</td><td>—</td></tr><tr><td>Back Stage Head Mini Cart</td><td>—</td></tr><tr><td>BackStage Kino Cart</td><td>—</td></tr></tbody></table></div></article>
         </div>
         <section class="inventory-group teal wireless-control-package" aria-labelledby="wireless-control-title">
-<h3 id="wireless-control-title">DMX and CRMX Control Package</h3>
+<details class="fixture-details control-benefits">
+<summary><h3 id="wireless-control-title">DMX and CRMX Control Package</h3><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Why add it?</span></summary>
+<div class="fixture-sheet">
+<p class="fixture-sheet-title">More control. Fewer trips between lights.</p>
+<dl>
+<div><dt>Adjust from the camera’s view</dt><dd>Fine-tune brightness, color, and effects beside the DP while seeing how the light lands in the shot.</dd></div>
+<div><dt>Reduce control cable runs</dt><dd>CRMX lets compatible fixtures receive lighting commands wirelessly, simplifying control cabling when the setup changes.</dd></div>
+<div><dt>Return to a previous look</dt><dd>Save lighting cues and showfiles so programmed looks can be recalled for another take or setup.</dd></div>
+<div><dt>Coordinate lighting effects</dt><dd>Run effects and pixel mapping from the same console, with NDI video input available to drive mapped lighting.</dd></div>
+<div><dt>Keep the crew oriented</dt><dd>LivePlot provides a live view of the lighting rig, with free, view-only access for collaborators.</dd></div>
+</dl>
+</div>
+</details>
 <div class="inventory-items">
 <p class="expanded-rate">$250<span> / day</span></p>
 <table class="gear-table" aria-label="DMX and CRMX Control Package equipment">
