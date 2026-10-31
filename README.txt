@@ -30,8 +30,8 @@ Original reference image files are bundled locally; no external image requests.
 The geometric headline uses URW Gothic Demi. Body text uses Nimbus Sans.
 All fonts are bundled locally; redistribution notices are in assets/FONT-LICENSE.txt.
 
-Search indexing is disabled with robots.txt, a robots meta tag, and a Netlify
-X-Robots-Tag header. These are not password protection.
+Search crawling and indexing are allowed. robots.txt permits all paths, and
+the pages and Netlify headers do not include search-indexing restrictions.
 
 EDITING
 index.html: text, links, page structure
