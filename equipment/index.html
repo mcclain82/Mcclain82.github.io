@@ -179,7 +179,9 @@
     @media(max-width:600px){.inventory-group .fixture-details>summary{flex-wrap:wrap;gap:4px}.fixture-sheet{padding:12px}}
     .control-benefits{position:relative;z-index:1}
     .inventory-group .control-benefits>summary{padding:22px 26px;align-items:center;flex-wrap:nowrap;gap:16px}
-    .control-benefits>summary h3{margin:0;font-size:23px;line-height:1.2}
+    .control-benefits>summary h3{flex:1;min-width:0;margin:0;font-size:23px;line-height:1.2}
+    .control-benefits>summary .package-rate{flex-shrink:0}
+    @media(max-width:600px){.inventory-group .control-benefits>summary{flex-wrap:wrap}.control-benefits>summary h3{flex-basis:100%}}
     .control-benefits>.fixture-sheet{margin:0 26px 24px}
     @media(max-width:760px){.inventory-group .control-benefits>summary{padding:19px 20px}.control-benefits>summary h3{font-size:21px}.control-benefits>.fixture-sheet{margin:0 20px 20px}}
   </style>
@@ -267,7 +269,7 @@
         </div>
         <section class="inventory-group teal wireless-control-package" aria-labelledby="wireless-control-title">
 <details class="fixture-details control-benefits">
-<summary><h3 id="wireless-control-title">DMX and CRMX Control Package</h3><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Why add it?</span></summary>
+<summary><h3 id="wireless-control-title">DMX and CRMX Control Package</h3><span class="package-rate">$250<span> / day</span></span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Why add it?</span></summary>
 <div class="fixture-sheet">
 <p class="fixture-sheet-title">More control. Fewer trips between lights.</p>
 <dl>
@@ -280,7 +282,6 @@
 </div>
 </details>
 <div class="inventory-items">
-<p class="expanded-rate">$250<span> / day</span></p>
 <table class="gear-table" aria-label="DMX and CRMX Control Package equipment">
 <tbody><tr><td>Blackout V3 Dimmer Board</td></tr><tr><td>FTSLED 4U PRO CRMX Transmitter</td></tr></tbody>
 </table>
@@ -294,11 +295,83 @@
 <table class="gear-table high-output-table" aria-label="Higher-output fixtures and additional daily rates">
 <thead><tr><th scope="col">Equipment</th><th scope="col">Additional rate</th></tr></thead>
 <tbody>
-<tr><td>Aputure XT52</td><td>$375/day</td></tr>
-<tr><td>Aputure CS32</td><td>$250/day</td></tr>
-<tr><td>Nanlux 2400B</td><td>$250/day</td></tr>
-<tr><td>Godox Kowled AM1600r 8×8</td><td>$375/day</td></tr>
-<tr><td>Nanlux Dyno 1200C</td><td>$185/day</td></tr>
+<tr><td><details class="fixture-details">
+<summary><span>Aputure XT52</span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<div class="fixture-sheet">
+<p class="fixture-sheet-title">STORM XT52 · Quick specs</p>
+<dl>
+<div><dt>Light source</dt><dd>5,200 W tunable-white LED point source</dd></div>
+<div><dt>Color temperature</dt><dd>2,500–10,000 K; green/magenta adjustment</dd></div>
+<div><dt>Power / input</dt><dd>100–240 V AC; full output requires 180–240 V. Up to 3,200 W draw at 100–179 V; 5,600 W in standard mode at 180–240 V (6,000 W with extended head cable).</dd></div>
+<div><dt>Color quality</dt><dd>CRI &gt;96 / TLCI &gt;96</dd></div>
+<div><dt>Control</dt><dd>Onboard, Sidus Link, DMX, CRMX, Art-Net, sACN</dd></div>
+<div><dt>Weather rating</dt><dd>IP65</dd></div>
+</dl>
+<a href="https://aputure.com/EN-US/products/storm-xt52" target="_blank" rel="noopener noreferrer">Manufacturer specifications <span aria-hidden="true">↗</span></a>
+</div>
+</details></td><td>$375/day</td></tr>
+<tr><td><details class="fixture-details">
+<summary><span>Aputure CS32</span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<div class="fixture-sheet">
+<p class="fixture-sheet-title">STORM CS32 · Quick specs</p>
+<dl>
+<div><dt>Light source</dt><dd>Full-color LED point source</dd></div>
+<div><dt>Color temperature</dt><dd>1,800–20,000 K</dd></div>
+<div><dt>Power / input</dt><dd>3,200 W max consumption; 2,600 W max power output; 100–240 V AC</dd></div>
+<div><dt>Color quality</dt><dd>Average CRI 97 / TLCI 98</dd></div>
+<div><dt>Control</dt><dd>Onboard, Sidus Link / Sidus Link Pro, DMX/RDM, CRMX, Art-Net, sACN</dd></div>
+<div><dt>Weather rating</dt><dd>IP65</dd></div>
+</dl>
+<a href="https://help.aputure.com/en/storm-cs32/technical-specifications-and-photometrics" target="_blank" rel="noopener noreferrer">Manufacturer specifications <span aria-hidden="true">↗</span></a>
+</div>
+</details></td><td>$275/day</td></tr>
+<tr><td><details class="fixture-details">
+<summary><span>Nanlux 2400B</span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<div class="fixture-sheet">
+<p class="fixture-sheet-title">Evoke 2400B · Quick specs</p>
+<dl>
+<div><dt>Light source</dt><dd>2,400 W bi-color LED spotlight</dd></div>
+<div><dt>Color temperature</dt><dd>2,700–6,500 K; green/magenta adjustment</dd></div>
+<div><dt>Power input</dt><dd>100–240 V AC</dd></div>
+<div><dt>Dimming</dt><dd>0–100% in 0.1% increments</dd></div>
+<div><dt>Color quality</dt><dd>Average CRI 96 / TLCI 97</dd></div>
+<div><dt>Control</dt><dd>Onboard, 2.4 GHz remote, Bluetooth / NANLINK, DMX/RDM, LumenRadio wireless DMX</dd></div>
+<div><dt>Weather rating</dt><dd>IP55</dd></div>
+</dl>
+<a href="https://nanlite.jp/blogs/news/nanlux-evoke-2400b" target="_blank" rel="noopener noreferrer">Manufacturer specifications <span aria-hidden="true">↗</span></a>
+</div>
+</details></td><td>$250/day</td></tr>
+<tr><td><details class="fixture-details">
+<summary><span>Godox Kowled AM1600r 8×8</span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<div class="fixture-sheet">
+<p class="fixture-sheet-title">KNOWLED AM1600R 8×8 · Quick specs</p>
+<dl>
+<div><dt>Light source</dt><dd>1,600 W full-color flexible LED mat; 8 × 8 ft format</dd></div>
+<div><dt>Color temperature</dt><dd>1,800–10,000 K; green/magenta adjustment</dd></div>
+<div><dt>Power / input</dt><dd>1,800 W AC input rating; 100–240 V AC</dd></div>
+<div><dt>Dimming / effects</dt><dd>0–100%; four dimming curves and 14 effects</dd></div>
+<div><dt>Color quality</dt><dd>CRI approximately 96 / TLCI approximately 97</dd></div>
+<div><dt>Control</dt><dd>Onboard, DMX/RDM, CRMX, Ethernet, Bluetooth</dd></div>
+<div><dt>Weather rating</dt><dd>IP54 light body and controller</dd></div>
+</dl>
+<a href="https://www.godox.com/Downloads/KNOWLED_AM1600R.pdf" target="_blank" rel="noopener noreferrer">Manufacturer specifications <span aria-hidden="true">↗</span></a>
+</div>
+</details></td><td>$375/day</td></tr>
+<tr><td><details class="fixture-details">
+<summary><span>Nanlux Dyno 1200C</span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<div class="fixture-sheet">
+<p class="fixture-sheet-title">Dyno 1200C · Quick specs</p>
+<dl>
+<div><dt>Light source</dt><dd>1,200 W full-color LED soft panel</dd></div>
+<div><dt>Color temperature</dt><dd>2,700–20,000 K</dd></div>
+<div><dt>Color modes</dt><dd>CCT, HSI, RGBW, xy, and gel library</dd></div>
+<div><dt>Dimming</dt><dd>0–100%; 0.1% increments between 1% and 100%</dd></div>
+<div><dt>Effects</dt><dd>15 customizable lighting effects</dd></div>
+<div><dt>Control</dt><dd>DMX/RDM, LumenRadio TimoTwo wireless control, Wi-Fi, Bluetooth</dd></div>
+</dl>
+<a href="https://www.nanluxamericas.com/dyno-series-1" target="_blank" rel="noopener noreferrer">Manufacturer specifications <span aria-hidden="true">↗</span></a>
+</div>
+</details></td><td>$185/day</td></tr>
 </tbody></table>
 </div>
 </section>
