@@ -10,7 +10,7 @@
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/hero-logo.png" as="image">
-  <link rel="stylesheet" href="styles.css?v=balanced-features4">
+  <link rel="stylesheet" href="styles.css?v=poppins1">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -121,6 +121,22 @@ Pittsburgh’s #1 source for lighting, grip equipment, and on-set expertise. Bri
     </div>
   </footer>
 
+  <script>
+    // Keep the contact card exactly as tall as the existing truck card.
+    (() => {
+      const truck = document.querySelector('.truck-panel');
+      const contact = document.querySelector('.contact-panel');
+      if (!truck || !contact) return;
+      const matchCardHeight = () => {
+        const height = truck.getBoundingClientRect().height;
+        if (height > 0) contact.style.setProperty('--contact-panel-height', height + 'px');
+      };
+      if ('ResizeObserver' in window) new ResizeObserver(matchCardHeight).observe(truck);
+      window.addEventListener('resize', matchCardHeight);
+      window.addEventListener('load', matchCardHeight);
+      matchCardHeight();
+    })();
+  </script>
   <script src="script.js" defer></script>
 </body>
 </html>
