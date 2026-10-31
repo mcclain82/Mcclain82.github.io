@@ -273,6 +273,19 @@ a:focus-visible,button:focus-visible{outline:3px solid #fff;outline-offset:5px}
 }
 .footer-bottom .brand{font-size:16px;letter-spacing:0}
 .footer-bottom p{margin:0;font-size:11px;letter-spacing:2px;color:#b4b8af}
+.footer-brand-group{display:flex;align-items:center;gap:4px}
+.footer-brand-group .brand{margin-right:16px}
+.footer-instagram,.footer-contact-icon{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-width:44px;min-height:44px;border-radius:50%;
+  color:var(--amber);
+  transition:background-color .2s ease,color .2s ease,transform .2s ease;
+}
+.footer-instagram svg,.footer-contact-icon svg{width:20px;height:20px;stroke-width:1.6}
+.footer-instagram:hover,.footer-contact-icon:hover{
+  background-color:#f0ae3914;color:#ffd17a;transform:translateY(-2px);
+}
+.footer-instagram:focus-visible,.footer-contact-icon:focus-visible{outline-color:var(--amber)}
 
 /* ==========================================================================
    Breakpoints (large → small)
