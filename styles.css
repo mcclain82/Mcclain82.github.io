@@ -466,6 +466,13 @@ a:focus-visible,button:focus-visible{outline:3px solid #fff;outline-offset:5px}
   .footer > .contact-section:has(#contact-title){gap:28px;padding-block:28px 30px}
 }
 
+/* Homepage artwork cards: ten percent smaller within their existing columns. */
+.package:has(#package-title) .truck-panel,
+.footer > .contact-section:has(#contact-title) .contact-panel{
+  width:90%;
+  justify-self:center;
+}
+
 /* Shared masthead: evenly spaced tagline aligned to the company name. */
 .header .brand{display:grid;grid-template-columns:minmax(0,1fr);width:max-content}
 .header .brand .brand-tag{
