@@ -273,8 +273,9 @@ a:focus-visible,button:focus-visible{outline:3px solid #fff;outline-offset:5px}
 }
 .footer-bottom .brand{font-size:16px;letter-spacing:0}
 .footer-bottom p{margin:0;font-size:11px;letter-spacing:2px;color:#b4b8af}
-.footer-brand-group{display:flex;align-items:center;gap:4px}
+.footer-brand-group{display:flex;align-items:center;flex-wrap:wrap;gap:4px}
 .footer-brand-group .brand{margin-right:16px}
+.footer-brand-group .footer-tagline{margin-right:16px}
 .footer-instagram,.footer-contact-icon{
   display:inline-flex;align-items:center;justify-content:center;
   min-width:44px;min-height:44px;border-radius:50%;
