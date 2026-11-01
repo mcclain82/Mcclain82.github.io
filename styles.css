@@ -358,6 +358,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #fff;outline-offset:5px}
   .hero-linen::after{-webkit-mask-size:86.25% auto;mask-size:86.25% auto}
   .hero-shell::after{background:linear-gradient(90deg,#141817ee,#14181788 65%,#14181733)}
   .hero{min-height:396px;padding:55.5px 0 60px}
+  #main>.hero-shell>.hero{min-height:356px;padding-block:40px 45px}
   .hero h1{font-size:52px;letter-spacing:-1px}
   .intro{max-width:350px;font-size:18px}
   .actions{gap:12px}
