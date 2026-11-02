@@ -71,6 +71,45 @@
 .work-page .projects{padding-top:38px}
 @media(max-width:760px){.work-page .projects{padding-top:28px}}
 
+
+/* A little tungsten-lamp moment for the headline's punchline. */
+.light-word{
+  position:relative;display:inline-block;isolation:isolate;
+  color:#ffe2a1;
+  text-shadow:0 0 18px #ffbf5966,0 0 42px #e9a13b33;
+  transition:color .45s ease,text-shadow .6s ease;
+}
+.light-word::before{
+  content:"";position:absolute;inset:-.2em -.35em;z-index:-1;
+  pointer-events:none;border-radius:50%;
+  background:radial-gradient(ellipse,#ffc36a24 0%,#f4ad4210 40%,transparent 70%);
+  opacity:.8;transform:scale(1);transition:opacity .6s ease,transform .8s ease;
+}
+@media(prefers-reduced-motion:no-preference){
+  .light-word{animation:light-warm-up 2.2s .45s backwards}
+  .light-word::before{animation:light-halo 2.2s .45s backwards}
+  @media(hover:hover){
+    .light-word:hover{color:#fff5d8;text-shadow:0 0 12px #ffd483aa,0 0 34px #ffbf5988,0 0 64px #e9a13b55}
+    .light-word:hover::before{opacity:1;transform:scale(1.4)}
+  }
+}
+@keyframes light-warm-up{
+  0%,18%{color:var(--ivory);text-shadow:0 0 0 transparent}
+  36%{color:#ffe2a1;text-shadow:0 0 14px #ffbf5955}
+  48%{color:var(--ivory);text-shadow:0 0 4px #ffbf5922}
+  75%{color:#fff5d8;text-shadow:0 0 16px #ffd483aa,0 0 42px #ffbf5966}
+  100%{color:#ffe2a1;text-shadow:0 0 18px #ffbf5966,0 0 42px #e9a13b33}
+}
+@keyframes light-halo{
+  0%,18%{opacity:0;transform:scale(.75)}
+  36%{opacity:.4}48%{opacity:.15}
+  75%{opacity:1;transform:scale(1.15)}
+  100%{opacity:.8;transform:scale(1)}
+}
+@media(prefers-reduced-motion:reduce){
+  .light-word,.light-word::before{transition:none}
+}
+
 </style>
 <script src="../script.js" defer></script>
 <script src="reveal.js" defer></script>
@@ -106,7 +145,7 @@ body .compact-top{background:var(--charcoal);position:relative;color:var(--ivory
 <section class="compact-intro wrap" aria-labelledby="work-title">
 <div class="hero-copy">
 <p class="eyebrow">Selected Work</p>
-<h1 id="work-title">A few projects we’ve helped bring to light.</h1>
+<h1 id="work-title">A few projects we’ve helped bring to <span class="light-word">light</span>.</h1>
 </div>
 </section>
 </div>
