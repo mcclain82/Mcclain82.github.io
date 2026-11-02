@@ -354,8 +354,8 @@ a:focus-visible,button:focus-visible{outline:3px solid #fff;outline-offset:5px}
   /* Hero */
   .hero-shell{--hero-logo-position:center center}
   /* Compact mobile logo; keep its linen mask aligned. */
-  .hero-shell::before{background-size:86.25% auto}
-  .hero-linen::after{-webkit-mask-size:86.25% auto;mask-size:86.25% auto}
+  .hero-shell::before{background-size:77.625% auto}
+  .hero-linen::after{-webkit-mask-size:77.625% auto;mask-size:77.625% auto}
   .hero-shell::after{background:linear-gradient(90deg,#141817ee,#14181788 65%,#14181733)}
   .hero{min-height:396px;padding:55.5px 0 60px}
   #main>.hero-shell>.hero{min-height:356px;padding-block:40px 45px}
@@ -495,12 +495,12 @@ a:focus-visible,button:focus-visible{outline:3px solid #fff;outline-offset:5px}
 
 @media (max-width: 760px) and (orientation: portrait) {
   .hero-shell::before {
-    background-size: 108% auto;
+    background-size: 97.2% auto;
   }
 
   .hero-linen::after {
-    -webkit-mask-size: 108% auto;
-    mask-size: 108% auto;
+    -webkit-mask-size: 97.2% auto;
+    mask-size: 97.2% auto;
   }
 }
 
