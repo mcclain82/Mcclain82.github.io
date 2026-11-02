@@ -1,36 +1,54 @@
-// Animate each project once; content stays visible if animation is unavailable.
+// Prepare offscreen projects before they enter view, then reveal each once.
 (() => {
   const projects = [...document.querySelectorAll('.projects .project')];
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (!('IntersectionObserver' in window) || !Element.prototype.animate || reducedMotion.matches) return;
 
-  const animations = new Set();
+  const pending = new Map();
   const observer = new IntersectionObserver(entries => {
-    const visible = entries.filter(entry => entry.isIntersecting)
-      .sort((a, b) => projects.indexOf(a.target) - projects.indexOf(b.target));
-    visible.forEach((entry, index) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
       observer.unobserve(entry.target);
-      // Don't move a video the visitor has already focused or scrolled past.
-      if (entry.target.contains(document.activeElement) || entry.boundingClientRect.top < 0) return;
-      const animation = entry.target.animate([
-        { opacity: 0, transform: 'translateY(80px) scale(0.95)' },
-        { opacity: 1, transform: 'translateY(0) scale(1)' }
-      ], {
-        duration: 1600,
-        delay: window.matchMedia('(min-width: 601px)').matches ? Math.min(index, 1) * 180 : 0,
-        easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
-        fill: 'backwards'
-      });
-      animations.add(animation);
-      animation.onfinish = animation.oncancel = () => animations.delete(animation);
-      entry.target.addEventListener('focusin', () => animation.cancel(), { once: true });
+      const animation = pending.get(entry.target);
+      if (animation) animation.play();
     });
-  }, { threshold: 0.08 });
+  }, { threshold: 0, rootMargin: '0px 0px 40px 0px' });
 
-  projects.forEach(project => observer.observe(project));
-  reducedMotion.addEventListener('change', event => {
-    if (!event.matches) return;
+  projects.forEach(project => {
+    // Already visible content must never disappear or jump on page load.
+    if (project.getBoundingClientRect().top < window.innerHeight + 40) return;
+    const animation = project.animate([
+      { opacity: 0, transform: 'translateY(28px)' },
+      { opacity: 1, transform: 'translateY(0)' }
+    ], {
+      duration: 1400,
+      easing: 'cubic-bezier(0.25, 0.1, 0.25, 1)',
+      fill: 'both'
+    });
+    animation.pause();
+    animation.currentTime = 0;
+    pending.set(project, animation);
+    const showImmediately = () => {
+      observer.unobserve(project);
+      pending.delete(project);
+      animation.cancel();
+    };
+    // Drop the transform after the entrance so the iframe renders normally.
+    animation.onfinish = showImmediately;
+    project.addEventListener('focusin', showImmediately, { once: true });
+    observer.observe(project);
+  });
+
+  const showAll = () => {
     observer.disconnect();
-    animations.forEach(animation => animation.cancel());
+    pending.forEach(animation => animation.cancel());
+    pending.clear();
+  };
+  reducedMotion.addEventListener('change', event => {
+    if (event.matches) showAll();
+  });
+  // Restoring a page from browser history should never restore hidden videos.
+  window.addEventListener('pageshow', event => {
+    if (event.persisted) showAll();
   });
 })();
