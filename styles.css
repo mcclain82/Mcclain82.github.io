@@ -519,6 +519,17 @@ a:focus-visible,button:focus-visible{outline:3px solid #fff;outline-offset:5px}
   }
 }
 
+/* iPhone Duo inner display in portrait: 1878 × 2670, allowing screen rounding. */
+@media screen and (orientation:portrait) and (pointer:coarse)
+  and (min-device-width:600px) and (max-device-width:1000px)
+  and (min-device-aspect-ratio:702/1000) and (max-device-aspect-ratio:705/1000){
+  #main > .hero-shell::before{background-size:82.62% auto}
+  #main > .hero-shell > .hero-linen::after{
+    -webkit-mask-size:82.62% auto;
+    mask-size:82.62% auto;
+  }
+}
+
 .card.gaffer img.illustration {
   transform: scale(1.15);
   transform-origin: center;
