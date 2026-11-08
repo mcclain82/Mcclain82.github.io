@@ -164,12 +164,15 @@
     @media(max-width:600px){.high-output-note{font-size:14px}.high-output-table th:last-child,.high-output-table td:last-child{width:100px}.high-output-table th:last-child{white-space:normal}}
 
     /* Fixture specs expand within the equipment row, independently of the package. */
-    .inventory-group .fixture-details>summary{padding:0;gap:12px;align-items:flex-start;font-size:inherit;font-weight:400;line-height:1.45;border-radius:4px}
+    .inventory-group .fixture-details>summary{display:block;padding:0;gap:12px;align-items:flex-start;font-size:inherit;font-weight:400;line-height:1.45;border-radius:4px}
     .inventory-group .fixture-details>summary:focus-visible{outline:2px solid var(--amber);outline-offset:4px;border-radius:4px}
     .fixture-accessories{color:#d0dbd3}
     .fixture-info{display:inline-flex;align-items:center;gap:5px;flex-shrink:0;min-height:28px;color:var(--amber);font-size:12px;font-weight:600;white-space:nowrap}
     .fixture-info>span{font-size:19px;line-height:1}
     .fixture-details[open] .fixture-info{color:var(--ivory)}
+    .fixture-details .fixture-info.fixture-spec-icon{min-height:0;width:16px;height:16px;margin-left:6px;vertical-align:middle;color:#b8c2b7;font-weight:400}
+    .fixture-spec-icon>span:first-child{font-size:14px;line-height:1}
+    .fixture-spec-icon .fixture-spec-label{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
     .fixture-sheet{margin-top:16px;padding:16px;background:#0003;border:1px solid #f4efe526;border-radius:10px;font-size:13px;line-height:1.5}
     .fixture-sheet-title{margin:0 0 12px;font-weight:700;color:var(--amber)}
     .fixture-sheet dl{margin:0 0 14px}
@@ -240,7 +243,7 @@
         <div class="package-content"><p class="expanded-rate">$1,600<span> / day</span></p><h2 class="inventory-caption">What’s on the truck</h2>
         <div class="equipment-grid inventory-grid">
 <article class="inventory-group teal"><h3>RGB Lights</h3><div class="inventory-items"><table class="gear-table" aria-label="RGB Lights"><thead><tr><th scope="col">Equipment</th><th scope="col">QTY</th></tr></thead><tbody><tr><td><details class="fixture-details">
-<summary><span>ARRI SkyPanel S60 <span class="fixture-accessories">(Chimera w/ Grid, 50º Honeycrate)</span></span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<summary><span>ARRI SkyPanel S60 <span class="fixture-accessories">(Chimera w/ Grid, 50º Honeycrate)</span></span><span class="fixture-info fixture-spec-icon" title="Fixture specifications"><span aria-hidden="true">ⓘ</span><span class="fixture-spec-label">Specifications</span></span></summary>
 <div class="fixture-sheet">
 <p class="fixture-sheet-title">SkyPanel S60-C · Quick specs</p>
 <dl>
@@ -258,7 +261,7 @@
 <a href="https://www.arri.com/resource/blob/31124/a3ef8cd7d9f50f5dcd314e9e1b2299de/arri-skypanel-s60-c-data-sheet-en-data.pdf" target="_blank" rel="noopener noreferrer">Full ARRI datasheet (PDF) <span aria-hidden="true">↗</span></a>
 </div>
 </details></td><td>1</td></tr><tr><td><details class="fixture-details">
-<summary><span>Arri Skypanel S30</span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<summary><span>Arri Skypanel S30</span><span class="fixture-info fixture-spec-icon" title="Fixture specifications"><span aria-hidden="true">ⓘ</span><span class="fixture-spec-label">Specifications</span></span></summary>
 <div class="fixture-sheet">
 <p class="fixture-sheet-title">SkyPanel S30-C · Quick specs</p>
 <dl>
@@ -273,7 +276,7 @@
 <a href="https://www.arri.com/en/lighting/led-panel-lights/skypanel-classic/s30-c" target="_blank" rel="noopener noreferrer">Manufacturer specifications <span aria-hidden="true">↗</span></a>
 </div>
 </details></td><td>1</td></tr><tr><td><details class="fixture-details">
-<summary><span>Creamsource Vortex 8</span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<summary><span>Creamsource Vortex 8</span><span class="fixture-info fixture-spec-icon" title="Fixture specifications"><span aria-hidden="true">ⓘ</span><span class="fixture-spec-label">Specifications</span></span></summary>
 <div class="fixture-sheet">
 <p class="fixture-sheet-title">Vortex8 · Quick specs</p>
 <dl>
@@ -290,7 +293,7 @@
 <a href="https://knowledge.creamsource.com/specs-for-the-vortex8" target="_blank" rel="noopener noreferrer">Manufacturer specifications <span aria-hidden="true">↗</span></a>
 </div>
 </details></td><td>2</td></tr><tr><td><details class="fixture-details">
-<summary><span>Creamsource Vortex 4</span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<summary><span>Creamsource Vortex 4</span><span class="fixture-info fixture-spec-icon" title="Fixture specifications"><span aria-hidden="true">ⓘ</span><span class="fixture-spec-label">Specifications</span></span></summary>
 <div class="fixture-sheet">
 <p class="fixture-sheet-title">Vortex4 · Quick specs</p>
 <dl>
@@ -307,7 +310,7 @@
 <a href="https://knowledge.creamsource.com/specs-for-the-vortex4" target="_blank" rel="noopener noreferrer">Manufacturer specifications <span aria-hidden="true">↗</span></a>
 </div>
 </details></td><td>2</td></tr><tr><td><details class="fixture-details">
-<summary><span>Lite Panels Gemini 2x1 <span class="fixture-accessories">(Chimera, Snapgrid)</span></span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<summary><span>Lite Panels Gemini 2x1 <span class="fixture-accessories">(Chimera, Snapgrid)</span></span><span class="fixture-info fixture-spec-icon" title="Fixture specifications"><span aria-hidden="true">ⓘ</span><span class="fixture-spec-label">Specifications</span></span></summary>
 <div class="fixture-sheet">
 <p class="fixture-sheet-title">Litepanels Gemini 2×1 Soft · Quick specs</p>
 <dl>
@@ -324,7 +327,7 @@
 <a href="https://www.litepanels.com/wp-content/uploads/2023/06/LP-Gemini-2x1-soft-brochure.pdf" target="_blank" rel="noopener noreferrer">Manufacturer specifications <span aria-hidden="true">↗</span></a>
 </div>
 </details></td><td>2</td></tr><tr><td><details class="fixture-details">
-<summary><span>Litemat Spectrum 2L <span class="fixture-accessories">(Snapgrid)</span></span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<summary><span>Litemat Spectrum 2L <span class="fixture-accessories">(Snapgrid)</span></span><span class="fixture-info fixture-spec-icon" title="Fixture specifications"><span aria-hidden="true">ⓘ</span><span class="fixture-spec-label">Specifications</span></span></summary>
 <div class="fixture-sheet">
 <p class="fixture-sheet-title">LiteMat Spectrum 2L · Quick specs</p>
 <dl>
@@ -339,7 +342,7 @@
 <a href="https://www.litegear.com/download/538/data-sheets/29919/litemat-spectrum-2l-2019-data-sheet.pdf" target="_blank" rel="noopener noreferrer">Manufacturer specifications <span aria-hidden="true">↗</span></a>
 </div>
 </details></td><td>2</td></tr><tr><td><details class="fixture-details">
-<summary><span>Astera Titan Tubes <span class="fixture-accessories">(Snapgrid, Honeycrate)</span></span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<summary><span>Astera Titan Tubes <span class="fixture-accessories">(Snapgrid, Honeycrate)</span></span><span class="fixture-info fixture-spec-icon" title="Fixture specifications"><span aria-hidden="true">ⓘ</span><span class="fixture-spec-label">Specifications</span></span></summary>
 <div class="fixture-sheet">
 <p class="fixture-sheet-title">Astera Titan Tube · FP1 · Quick specs</p>
 <dl>
@@ -356,7 +359,7 @@
 <a href="https://saleswl.com/wp-content/uploads/2020/08/Astera_Titan-Tube_User-Manual.pdf" target="_blank" rel="noopener noreferrer">Manufacturer specifications <span aria-hidden="true">↗</span></a>
 </div>
 </details></td><td>8</td></tr><tr><td><details class="fixture-details">
-<summary><span>Astera Helios Tubes <span class="fixture-accessories">(Snapgrid, Honeycrate)</span></span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<summary><span>Astera Helios Tubes <span class="fixture-accessories">(Snapgrid, Honeycrate)</span></span><span class="fixture-info fixture-spec-icon" title="Fixture specifications"><span aria-hidden="true">ⓘ</span><span class="fixture-spec-label">Specifications</span></span></summary>
 <div class="fixture-sheet">
 <p class="fixture-sheet-title">Helios Tube · FP2 · Quick specs</p>
 <dl>
@@ -372,7 +375,7 @@
 <a href="https://www.veranstaltungstechnikmueller.de/pdf/Astera_Helios_Tube_Datenblatt.pdf" target="_blank" rel="noopener noreferrer">Manufacturer datasheet (PDF) <span aria-hidden="true">↗</span></a>
 </div>
 </details></td><td>8</td></tr><tr><td><details class="fixture-details">
-<summary><span>Astera NYX Bulbs</span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<summary><span>Astera NYX Bulbs</span><span class="fixture-info fixture-spec-icon" title="Fixture specifications"><span aria-hidden="true">ⓘ</span><span class="fixture-spec-label">Specifications</span></span></summary>
 <div class="fixture-sheet">
 <p class="fixture-sheet-title">NYX Bulb · FP5 · Quick specs</p>
 <dl>
@@ -389,7 +392,7 @@
 <a href="https://www.akaricenter.com/tokusyu/mirror_ball/astera/files/FP5_NYXBulb_catalog.pdf" target="_blank" rel="noopener noreferrer">Manufacturer datasheet (PDF) <span aria-hidden="true">↗</span></a>
 </div>
 </details></td><td>16</td></tr><tr><td><details class="fixture-details">
-<summary><span>Astera Luna Bulbs</span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<summary><span>Astera Luna Bulbs</span><span class="fixture-info fixture-spec-icon" title="Fixture specifications"><span aria-hidden="true">ⓘ</span><span class="fixture-spec-label">Specifications</span></span></summary>
 <div class="fixture-sheet">
 <p class="fixture-sheet-title">LunaBulb · FP7 · Quick specs</p>
 <dl>
@@ -405,7 +408,7 @@
 <a href="https://teltec.de/media/pdf/56/7c/58/astera-lunabulb-datasheet.pdf" target="_blank" rel="noopener noreferrer">Manufacturer datasheet (PDF) <span aria-hidden="true">↗</span></a>
 </div>
 </details></td><td>8</td></tr><tr><td><details class="fixture-details">
-<summary><span>Astera SolaBulb</span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<summary><span>Astera SolaBulb</span><span class="fixture-info fixture-spec-icon" title="Fixture specifications"><span aria-hidden="true">ⓘ</span><span class="fixture-spec-label">Specifications</span></span></summary>
 <div class="fixture-sheet">
 <p class="fixture-sheet-title">SolaBulb · AST-BLBSL · Quick specs</p>
 <dl>
@@ -422,7 +425,7 @@
 <a href="https://saleswl.com/wp-content/uploads/2026/01/Astera-SolaBulb-Data-Sheet.pdf" target="_blank" rel="noopener noreferrer">Manufacturer datasheet (PDF) <span aria-hidden="true">↗</span></a>
 </div>
 </details></td><td>4</td></tr><tr><td><details class="fixture-details">
-<summary><span>Kino Flo FreeStyle 31</span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<summary><span>Kino Flo FreeStyle 31</span><span class="fixture-info fixture-spec-icon" title="Fixture specifications"><span aria-hidden="true">ⓘ</span><span class="fixture-spec-label">Specifications</span></span></summary>
 <div class="fixture-sheet">
 <p class="fixture-sheet-title">Kino Flo FreeStyle 31 · Quick specs</p>
 <dl>
@@ -437,7 +440,7 @@
 <a href="https://kinoflo.com/freestyle-31/" target="_blank" rel="noopener noreferrer">Manufacturer specifications <span aria-hidden="true">↗</span></a>
 </div>
 </details></td><td>2</td></tr><tr><td><details class="fixture-details">
-<summary><span>Hive Wasp 100-C</span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<summary><span>Hive Wasp 100-C</span><span class="fixture-info fixture-spec-icon" title="Fixture specifications"><span aria-hidden="true">ⓘ</span><span class="fixture-spec-label">Specifications</span></span></summary>
 <div class="fixture-sheet">
 <p class="fixture-sheet-title">Hive Wasp 100-C · Quick specs</p>
 <dl>
@@ -452,7 +455,7 @@
 <a href="https://hivelighting.com/c-series/wasp-100-c/" target="_blank" rel="noopener noreferrer">Manufacturer specifications <span aria-hidden="true">↗</span></a>
 </div>
 </details></td><td>1</td></tr><tr><td><details class="fixture-details">
-<summary><span>Nanlux Evoke 150C <span class="fixture-accessories">(Reflector, Fresnel)</span></span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<summary><span>Nanlux Evoke 150C <span class="fixture-accessories">(Reflector, Fresnel)</span></span><span class="fixture-info fixture-spec-icon" title="Fixture specifications"><span aria-hidden="true">ⓘ</span><span class="fixture-spec-label">Specifications</span></span></summary>
 <div class="fixture-sheet">
 <p class="fixture-sheet-title">Nanlux Evoke 150C · Quick specs</p>
 <dl>
@@ -467,7 +470,7 @@
 <a href="https://nanliteus.com/products/evoke-150c-8-chip-led-spotlight" target="_blank" rel="noopener noreferrer">Manufacturer specifications <span aria-hidden="true">↗</span></a>
 </div>
 </details></td><td>2</td></tr><tr><td><details class="fixture-details">
-<summary><span>Nanlite Forza 60C <span class="fixture-accessories">(Lantern, Softbox, Projector)</span></span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<summary><span>Nanlite Forza 60C <span class="fixture-accessories">(Lantern, Softbox, Projector)</span></span><span class="fixture-info fixture-spec-icon" title="Fixture specifications"><span aria-hidden="true">ⓘ</span><span class="fixture-spec-label">Specifications</span></span></summary>
 <div class="fixture-sheet">
 <p class="fixture-sheet-title">Nanlite Forza 60C · Quick specs</p>
 <dl>
@@ -482,7 +485,7 @@
 <a href="https://www.nanlite.com.tr/products/topic/Forza-60C.html" target="_blank" rel="noopener noreferrer">Manufacturer specifications <span aria-hidden="true">↗</span></a>
 </div>
 </details></td><td>1</td></tr><tr><td><details class="fixture-details">
-<summary><span>Nanlite PavoSlim 360C</span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<summary><span>Nanlite PavoSlim 360C</span><span class="fixture-info fixture-spec-icon" title="Fixture specifications"><span aria-hidden="true">ⓘ</span><span class="fixture-spec-label">Specifications</span></span></summary>
 <div class="fixture-sheet">
 <p class="fixture-sheet-title">Nanlite PavoSlim 360C · Quick specs</p>
 <dl>
@@ -498,7 +501,7 @@
 <a href="https://www.nanlite.com/product-pavoslim-360c" target="_blank" rel="noopener noreferrer">Manufacturer specifications <span aria-hidden="true">↗</span></a>
 </div>
 </details></td><td>2</td></tr><tr><td><details class="fixture-details">
-<summary><span>Aputure STORM 80c <span class="fixture-accessories">(Softbox, Lantern)</span></span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<summary><span>Aputure STORM 80c <span class="fixture-accessories">(Softbox, Lantern)</span></span><span class="fixture-info fixture-spec-icon" title="Fixture specifications"><span aria-hidden="true">ⓘ</span><span class="fixture-spec-label">Specifications</span></span></summary>
 <div class="fixture-sheet">
 <p class="fixture-sheet-title">Aputure STORM 80c · Quick specs</p>
 <dl>
@@ -514,7 +517,7 @@
 <a href="https://aputure.com/en-US/products/storm-80c" target="_blank" rel="noopener noreferrer">Manufacturer specifications <span aria-hidden="true">↗</span></a>
 </div>
 </details></td><td>2</td></tr><tr><td><details class="fixture-details">
-<summary><span>Aputure MC</span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<summary><span>Aputure MC</span><span class="fixture-info fixture-spec-icon" title="Fixture specifications"><span aria-hidden="true">ⓘ</span><span class="fixture-spec-label">Specifications</span></span></summary>
 <div class="fixture-sheet">
 <p class="fixture-sheet-title">Aputure MC · Quick specs</p>
 <dl>
@@ -530,7 +533,7 @@
 <a href="https://aputure.com/en-US/products/mc" target="_blank" rel="noopener noreferrer">Manufacturer specifications <span aria-hidden="true">↗</span></a>
 </div>
 </details></td><td>4</td></tr><tr><td><details class="fixture-details">
-<summary><span>Aputure MC Pro</span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<summary><span>Aputure MC Pro</span><span class="fixture-info fixture-spec-icon" title="Fixture specifications"><span aria-hidden="true">ⓘ</span><span class="fixture-spec-label">Specifications</span></span></summary>
 <div class="fixture-sheet">
 <p class="fixture-sheet-title">Aputure MC Pro · Quick specs</p>
 <dl>
@@ -547,7 +550,7 @@
 <a href="https://aputure.com/en-US/products/mc-pro" target="_blank" rel="noopener noreferrer">Manufacturer specifications <span aria-hidden="true">↗</span></a>
 </div>
 </details></td><td>8</td></tr><tr><td><details class="fixture-details">
-<summary><span>Aputure INFINIBAR PB12</span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<summary><span>Aputure INFINIBAR PB12</span><span class="fixture-info fixture-spec-icon" title="Fixture specifications"><span aria-hidden="true">ⓘ</span><span class="fixture-spec-label">Specifications</span></span></summary>
 <div class="fixture-sheet">
 <p class="fixture-sheet-title">Aputure INFINIBAR PB12 · Quick specs</p>
 <dl>
@@ -564,7 +567,7 @@
 <a href="https://aputure.com/en-US/products/infinibar-pb12" target="_blank" rel="noopener noreferrer">Manufacturer specifications <span aria-hidden="true">↗</span></a>
 </div>
 </details></td><td>8</td></tr><tr><td><details class="fixture-details">
-<summary><span>Aputure MT Pro 1’ Tube <span class="fixture-accessories">(Snapgrid)</span></span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<summary><span>Aputure MT Pro 1’ Tube <span class="fixture-accessories">(Snapgrid)</span></span><span class="fixture-info fixture-spec-icon" title="Fixture specifications"><span aria-hidden="true">ⓘ</span><span class="fixture-spec-label">Specifications</span></span></summary>
 <div class="fixture-sheet">
 <p class="fixture-sheet-title">Aputure MT Pro 1’ Tube · Quick specs</p>
 <dl>
@@ -619,7 +622,7 @@
 <thead><tr><th scope="col">Equipment</th><th scope="col">Additional rate</th></tr></thead>
 <tbody>
 <tr><td><details class="fixture-details">
-<summary><span>Aputure XT52</span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<summary><span>Aputure XT52</span><span class="fixture-info fixture-spec-icon" title="Fixture specifications"><span aria-hidden="true">ⓘ</span><span class="fixture-spec-label">Specifications</span></span></summary>
 <div class="fixture-sheet">
 <p class="fixture-sheet-title">STORM XT52 · Quick specs</p>
 <dl>
@@ -634,7 +637,7 @@
 </div>
 </details></td><td>$375/day</td></tr>
 <tr><td><details class="fixture-details">
-<summary><span>Aputure CS32</span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<summary><span>Aputure CS32</span><span class="fixture-info fixture-spec-icon" title="Fixture specifications"><span aria-hidden="true">ⓘ</span><span class="fixture-spec-label">Specifications</span></span></summary>
 <div class="fixture-sheet">
 <p class="fixture-sheet-title">STORM CS32 · Quick specs</p>
 <dl>
@@ -649,7 +652,7 @@
 </div>
 </details></td><td>$275/day</td></tr>
 <tr><td><details class="fixture-details">
-<summary><span>Nanlux 2400B</span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<summary><span>Nanlux 2400B</span><span class="fixture-info fixture-spec-icon" title="Fixture specifications"><span aria-hidden="true">ⓘ</span><span class="fixture-spec-label">Specifications</span></span></summary>
 <div class="fixture-sheet">
 <p class="fixture-sheet-title">Evoke 2400B · Quick specs</p>
 <dl>
@@ -665,7 +668,7 @@
 </div>
 </details></td><td>$250/day</td></tr>
 <tr><td><details class="fixture-details">
-<summary><span>Godox Kowled AM1600r 8×8</span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<summary><span>Godox Kowled AM1600r 8×8</span><span class="fixture-info fixture-spec-icon" title="Fixture specifications"><span aria-hidden="true">ⓘ</span><span class="fixture-spec-label">Specifications</span></span></summary>
 <div class="fixture-sheet">
 <p class="fixture-sheet-title">KNOWLED AM1600R 8×8 · Quick specs</p>
 <dl>
@@ -681,7 +684,7 @@
 </div>
 </details></td><td>$375/day</td></tr>
 <tr><td><details class="fixture-details">
-<summary><span>Nanlux Dyno 1200C</span><span class="fixture-info"><span aria-hidden="true">ⓘ</span> Specs</span></summary>
+<summary><span>Nanlux Dyno 1200C</span><span class="fixture-info fixture-spec-icon" title="Fixture specifications"><span aria-hidden="true">ⓘ</span><span class="fixture-spec-label">Specifications</span></span></summary>
 <div class="fixture-sheet">
 <p class="fixture-sheet-title">Dyno 1200C · Quick specs</p>
 <dl>
